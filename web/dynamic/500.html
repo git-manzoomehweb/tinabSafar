@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>
+      [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری تیناب سفر پارسه)##]
+    </title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  تیناب سفر پارسه)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body class="relative">
+    <basis core="call" file="header.inc" />
+    <main class="w-full flex flex-col gap-4 mt-24 mb-48 items-center">
+      <img
+        loading="lazy"
+        class="w-[390px] h-[291px]"
+        width="954"
+        height="711"
+        src="[##cms.cms.cdn##]/images/500.png"
+        alt="500"
+      />
+      <p class="text-sm">ارتباط با مشکل مواجه شد</p>
+      <a href="/" class="btn w-[175px] h-12 rounded-lg">بازگشت به صفحه اصلی</a>
+    </main>
+    <basis core="call" file="footer.inc" />
+  </body>
+</html>

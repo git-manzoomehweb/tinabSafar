@@ -1,0 +1,305 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="1"
+  name="db"
+  q="[##cms.query.search-content-name##]"
+>
+  <member
+    name="article-list"
+    type="list"
+    link="article.bc"
+    propertyid="7244,7248"
+    perpage="9"
+    pageno="[##cms.query.pagenum|(1)##]"
+    order="ord"
+    size="272x263"
+  />
+  <member
+    name="paging"
+    type="list"
+    request="paging"
+    count="2"
+    parentname="article-list"
+  />
+</basis>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>
+      [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری تیناب سفر پارسه)##]
+    </title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  تیناب سفر پارسه)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body class="relative">
+    <basis core="call" file="header.inc" />
+
+    <main class="w-full">
+      <section
+        class="w-full flex relative flex-col ar-list-bg gap-4 h-[348px] bg-cover bg-no-repeat bg-center justify-center items-center"
+      >
+        <div
+          class="absolute top-0 left-0 w-full h-full flex flex-col gap-6 justify-center items-center"
+        >
+          <h1 class="text-white font-bold text-base">
+            [##cms.query.search-content-name##]
+          </h1>
+
+          <ul class="flex gap-1 items-center">
+            <li class="text-white text-sm hover:!text-primary-900">
+              <a href="/">صفحه اصلی</a>
+            </li>
+            <li class="text-white text-sm">></li>
+            <li class="text-white text-sm">
+              [##cms.query.search-content-name##]
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="w-full flex  justify-center mt-20 relative">
+        
+        <div
+          class="px-5 z-[2] flex flex-col gap-4 lg:!px-0 w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px]"
+        >
+          <basis core="list" datamembername="db.article-list">
+            <else-layout>
+              <div
+                class="w-full flex flex-col mt-20 gap-12 justify-center items-center"
+              >
+                <p class="text-base text-primary-900">موردی یافت نشد .</p>
+                <a
+                  class="w-fit hover:scale-105 p-3 bg-primary-900 rounded-lg h-16 flex justify-center items-center text-white text-sm"
+                  href="/"
+                >
+                  بازگشت به صفحه اصلی
+                </a>
+              </div>
+            </else-layout>
+            <layout>
+              <div class="w-full grid grid-cols-1 gap-3">@child</div>
+            </layout>
+            <face filter="link is null">
+              <article
+                class="custom-gr !h-[456px] p-2 rounded-xl flex flex-col gap-2"
+              >
+                <img loading='lazy'
+                  class="w-full h-[263px] rounded-xl"
+                  width="272"
+                  height="263"
+                  src="@00272X00263prp"
+                  alt="@title"
+                />
+                <div
+                  class="w-full bg-white flex flex-col relative p-4 rounded-3xl !h-[165px]"
+                >
+                  <div
+                    class="flex w-full justify-between left-0 px-4 absolute top-[-50px] !text-white"
+                  >
+                    <div class="flex">نویسنده: @prp_7248</div>
+                    <div class="flex items-center gap-2">
+                      @date
+                      <span class="calender-2">
+                        <svg
+                          width="31"
+                          height="29"
+                          viewBox="0 0 31 29"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M10.669 18.2592C11.1826 18.2592 11.6002 18.6756 11.6002 19.1904C11.6002 19.704 11.1826 20.1216 10.669 20.1216C10.1554 20.1216 9.73778 19.704 9.73778 19.1904C9.73778 18.6756 10.1554 18.2592 10.669 18.2592ZM15.5146 18.2592C16.0282 18.2592 16.4458 18.6756 16.4458 19.1904C16.4458 19.704 16.0282 20.1216 15.5146 20.1216C14.9998 20.1216 14.5834 19.704 14.5834 19.1904C14.5834 18.6756 14.9998 18.2592 15.5146 18.2592ZM20.3314 18.2592C20.845 18.2592 21.2614 18.6756 21.2614 19.1904C21.2614 19.704 20.845 20.1216 20.3314 20.1216C19.8166 20.1216 19.4002 19.704 19.4002 19.1904C19.4002 18.6756 19.8166 18.2592 20.3314 18.2592ZM5.18018 20.3376C5.18018 23.9136 7.32818 26.0496 10.9282 26.0496H20.0722C23.6722 26.0496 25.8202 23.9496 25.8202 20.4216V13.5696C25.8202 13.437 25.7128 13.3296 25.5802 13.3296H5.42018C5.28762 13.3296 5.18018 13.437 5.18018 13.5696V20.3376Z"
+                            fill="white"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M24.3442 6.48971C23.4682 5.62571 22.2322 5.13371 20.7682 5.00171V3.84971C20.7682 3.35771 20.3602 2.94971 19.8682 2.94971C19.3642 2.94971 18.9682 3.35771 18.9682 3.84971V8.10971C18.8842 8.13371 18.8122 8.15771 18.7282 8.15771C18.2242 8.15771 17.8282 7.74971 17.8282 7.25771V5.19371C17.8282 5.06115 17.7208 4.95371 17.5882 4.95371H12.0322V3.84971C12.0322 3.35771 11.6362 2.94971 11.1322 2.94971C10.6402 2.94971 10.2322 3.35771 10.2322 3.84971V8.10971C10.1602 8.13371 10.0762 8.15771 9.99218 8.15771C9.50018 8.15771 9.09218 7.74971 9.09218 7.25771V5.50037C9.09218 5.34446 8.94533 5.22986 8.79599 5.27465C6.50554 5.96138 5.18018 7.81824 5.18018 10.5697V11.2897C5.18018 11.4223 5.28762 11.5297 5.42018 11.5297H25.5802C25.7128 11.5297 25.8202 11.4223 25.8202 11.2897V10.5697C25.8202 8.87771 25.3162 7.46171 24.3442 6.48971Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <h6 class="font-bold line-clamp-1">@title</h6>
+                  <p class="text-sm line-clamp-3 my-3">@prp_7244</p>
+                  <div class="w-full flex justify-center">
+                    <a
+                      class="text-blue-600 transition-1 hover:scale-110 hover:text-secondary-600"
+                      href="/article.bc?lid=1&id=@id"
+                      >خواندن ادامه مطلب</a
+                    >
+                  </div>
+                </div>
+              </article>
+            </face>
+            <face>
+              <article
+                class="custom-gr !h-[456px] p-2 rounded-xl flex flex-col gap-2"
+              >
+                <img loading='lazy'
+                  class="w-full h-[263px] rounded-xl"
+                  width="272"
+                  height="263"
+                  src="@00272X00263prp"
+                  alt="@title"
+                />
+                <div
+                  class="w-full bg-white flex flex-col relative p-4 rounded-3xl !h-[165px]"
+                >
+                  <div
+                    class="flex w-full justify-between left-0 px-4 absolute top-[-50px] !text-white"
+                  >
+                    <div class="flex">نویسنده: @prp_7248</div>
+                    <div class="flex items-center gap-2">
+                      @date
+                      <span class="calender-2">
+                        <svg
+                          width="31"
+                          height="29"
+                          viewBox="0 0 31 29"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M10.669 18.2592C11.1826 18.2592 11.6002 18.6756 11.6002 19.1904C11.6002 19.704 11.1826 20.1216 10.669 20.1216C10.1554 20.1216 9.73778 19.704 9.73778 19.1904C9.73778 18.6756 10.1554 18.2592 10.669 18.2592ZM15.5146 18.2592C16.0282 18.2592 16.4458 18.6756 16.4458 19.1904C16.4458 19.704 16.0282 20.1216 15.5146 20.1216C14.9998 20.1216 14.5834 19.704 14.5834 19.1904C14.5834 18.6756 14.9998 18.2592 15.5146 18.2592ZM20.3314 18.2592C20.845 18.2592 21.2614 18.6756 21.2614 19.1904C21.2614 19.704 20.845 20.1216 20.3314 20.1216C19.8166 20.1216 19.4002 19.704 19.4002 19.1904C19.4002 18.6756 19.8166 18.2592 20.3314 18.2592ZM5.18018 20.3376C5.18018 23.9136 7.32818 26.0496 10.9282 26.0496H20.0722C23.6722 26.0496 25.8202 23.9496 25.8202 20.4216V13.5696C25.8202 13.437 25.7128 13.3296 25.5802 13.3296H5.42018C5.28762 13.3296 5.18018 13.437 5.18018 13.5696V20.3376Z"
+                            fill="white"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M24.3442 6.48971C23.4682 5.62571 22.2322 5.13371 20.7682 5.00171V3.84971C20.7682 3.35771 20.3602 2.94971 19.8682 2.94971C19.3642 2.94971 18.9682 3.35771 18.9682 3.84971V8.10971C18.8842 8.13371 18.8122 8.15771 18.7282 8.15771C18.2242 8.15771 17.8282 7.74971 17.8282 7.25771V5.19371C17.8282 5.06115 17.7208 4.95371 17.5882 4.95371H12.0322V3.84971C12.0322 3.35771 11.6362 2.94971 11.1322 2.94971C10.6402 2.94971 10.2322 3.35771 10.2322 3.84971V8.10971C10.1602 8.13371 10.0762 8.15771 9.99218 8.15771C9.50018 8.15771 9.09218 7.74971 9.09218 7.25771V5.50037C9.09218 5.34446 8.94533 5.22986 8.79599 5.27465C6.50554 5.96138 5.18018 7.81824 5.18018 10.5697V11.2897C5.18018 11.4223 5.28762 11.5297 5.42018 11.5297H25.5802C25.7128 11.5297 25.8202 11.4223 25.8202 11.2897V10.5697C25.8202 8.87771 25.3162 7.46171 24.3442 6.48971Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <h6 class="font-bold line-clamp-1">@title</h6>
+                  <p class="text-sm line-clamp-3 my-3">@prp_7244</p>
+                  <div class="w-full flex justify-center">
+                    <a
+                      class="text-blue-600 transition-1 hover:scale-110 hover:text-secondary-600"
+                      href="@link"
+                      >خواندن ادامه مطلب</a
+                    >
+                  </div>
+                </div>
+              </article>
+            </face>
+          </basis>
+          <div class="w-full flex gap-4 justify-center items-center">
+            <basis core="print" datamembername="db.paging">
+              <face filter="(@sta='pre')">
+                <a
+                class="w-12 h-12 bg-primary-900 transition-1 hover:bg-secondary-700 flex justify-center items-center rounded-2xl"
+                href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                  aria-label="angle-left"
+                >
+                  <svg
+                width="7"
+                height="12"
+                viewBox="0 0 7 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.83984 6C6.83984 6.12109 6.81484 6.24219 6.76484 6.36328C6.71484 6.48437 6.64984 6.57519 6.56984 6.63574L2.09984 11.1768C1.91984 11.3584 1.68984 11.4492 1.40984 11.4492C1.12984 11.4492 0.889844 11.3584 0.689844 11.1768C0.509844 10.9749 0.419844 10.7327 0.419844 10.4502C0.419844 10.1676 0.509844 9.93555 0.689844 9.75391L4.52984 5.87891L0.689844 2.00391C0.509844 1.80208 0.419844 1.5599 0.419844 1.27734C0.419844 0.994791 0.509844 0.762695 0.689844 0.581054C0.889844 0.379232 1.12984 0.27832 1.40984 0.27832C1.68984 0.27832 1.91984 0.379232 2.09984 0.581054L6.56984 5.0918C6.64984 5.29362 6.71484 5.46517 6.76484 5.60644C6.81484 5.74772 6.83984 5.87891 6.83984 6Z"
+                  fill="white"
+                  class="group-hover:fill-white"
+                />
+              </svg>
+                  </svg>
+                </a>
+              </face>
+            </basis>
+    
+            <basis core="print" datamembername="db.paging">
+              <face filter="(@page=[##cms.query.pagenum|(1)##])">
+                <a
+                class="w-12 h-12 bg-zinc-300 text-zinc-500 transition-1 hover:bg-secondary-200 flex justify-center items-center rounded-2xl"
+                href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                >
+                  @page
+                </a>
+              </face>
+              <face
+                filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no')"
+              >
+                <a
+                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                  class="w-12 h-12 bg-zinc-300 text-zinc-500 transition-1 hover:bg-secondary-200 flex justify-center items-center rounded-2xl"
+    
+                >
+                  @page
+                </a>
+              </face>
+            </basis>
+    
+            <basis core="print" datamembername="db.paging">
+              <face filter="(@sta='nex')">
+                <a
+                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                  aria-label="angle-right"
+                  class="w-12 h-12 bg-primary-900 transition-1 hover:bg-secondary-700 flex justify-center items-center rounded-2xl"
+                  >
+                 <svg
+                width="7"
+                height="12"
+                viewBox="0 0 7 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.83984 6C6.83984 6.12109 6.81484 6.24219 6.76484 6.36328C6.71484 6.48437 6.64984 6.57519 6.56984 6.63574L2.09984 11.1768C1.91984 11.3584 1.68984 11.4492 1.40984 11.4492C1.12984 11.4492 0.889844 11.3584 0.689844 11.1768C0.509844 10.9749 0.419844 10.7327 0.419844 10.4502C0.419844 10.1676 0.509844 9.93555 0.689844 9.75391L4.52984 5.87891L0.689844 2.00391C0.509844 1.80208 0.419844 1.5599 0.419844 1.27734C0.419844 0.994791 0.509844 0.762695 0.689844 0.581054C0.889844 0.379232 1.12984 0.27832 1.40984 0.27832C1.68984 0.27832 1.91984 0.379232 2.09984 0.581054L6.56984 5.0918C6.64984 5.29362 6.71484 5.46517 6.76484 5.60644C6.81484 5.74772 6.83984 5.87891 6.83984 6Z"
+                  fill="white"
+                  class="group-hover:fill-white"
+                />
+              </svg>
+                </a>
+              </face>
+            </basis>
+          </div>
+        </div>
+        
+      </section>
+    </main>
+    <basis core="call" file="footer.inc" />
+  </body>
+</html>

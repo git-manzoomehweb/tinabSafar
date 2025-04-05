@@ -1,0 +1,431 @@
+<basis
+  core="dbsource"
+  name="db"
+  source="basiscore"
+  lid="1"
+  mid="1"
+  usedforid="2375176"
+>
+  <member name="faq" type="view" />
+</basis>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>
+      [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری تیناب سفر پارسه)##]
+    </title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  تیناب سفر پارسه)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body class="relative">
+    <basis core="call" file="header.inc" />
+
+    <main class="w-full relative">
+      <section class="w-full flex justify-center mt-10 relative">
+        <span class="absolute top-[105px] right-0 z-0">
+          <img
+            width="858"
+            height="848"
+            class="w-[285px] h-[95px]"
+            src="../../images/abs-lng.png"
+            alt=""
+          />
+        </span>
+        <div
+          class="px-5 flex gap-4 lg:!px-0 w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px]"
+        >
+          <div class="w-1/2 z-[2] h-[300px] flex flex-col gap-3">
+            <img
+              width="254"
+              height="78"
+              class="w-[169px] h-[52px]"
+              src="../../images/logo.png"
+              alt="tinab-logo"
+            />
+            <basis core="print" datamembername="db.info">
+              <face filter="valueID=4078392">
+                <div class="text-sm line-clamp-[11]">@largetext</div>
+              </face>
+            </basis>
+          </div>
+
+          <div
+            class="w-1/2 p-5 z-[5] bg-background-1 border border-zinc-300 rounded-lg h-[622px] flex flex-col gap-5"
+          >
+            <h1 class="text-2xl text-primary-900 font-bold mb-3">
+              ارتباط با ما
+            </h1>
+            <basis core="print" datamembername="db.info">
+              <face filter="valueID=4078394">
+                <div class="flex items-center gap-4 mb-3">
+                  <img
+                    width="99"
+                    height="99"
+                    class="w-[33px] h-[33px]"
+                    src="../../images/location.png"
+                    alt="location"
+                  />
+                  <div class="text-primary-900 font-normal">@largetext</div>
+                </div>
+              </face>
+            </basis>
+
+            <basis core="print" datamembername="db.info">
+              <face filter="valueID=4078390">
+                <div class="flex items-center gap-4 mb-3">
+                  <img
+                    width="99"
+                    height="99"
+                    class="w-[33px] h-[33px]"
+                    src="../../images/calling.png"
+                    alt="calling"
+                  />
+                  <a
+                    href="tel:@text "
+                    class="hover:text-secondary-700 transition-1 text-primary-900 font-normal"
+                    >@text</a
+                  >
+                </div>
+              </face>
+            </basis>
+
+            <basis core="print" datamembername="db.info">
+              <face filter="valueID=4078391">
+                <div
+                  class="flex w-full border-b border-primary-200 items-center gap-4 pb-6 mb-3"
+                >
+                  <img
+                    width="99"
+                    height="99"
+                    class="w-[33px] h-[33px]"
+                    src="../../images/mail.png"
+                    alt="mail"
+                  />
+                  <a
+                    href="mailto:@text "
+                    class="hover:text-secondary-700 transition-1 text-primary-900 font-normal"
+                    >@text</a
+                  >
+                </div>
+              </face>
+            </basis>
+
+            <div id="suggestion-form" class="flex flex-col gap-4 w-full">
+              <h2 class="text-2xl text-primary-900 font-bold mb-3">
+                ثبت انتقاد یا پیشنهاد
+              </h2>
+              <basis
+                core="schema"
+                run="atclient"
+                schemaurl="/schema/domainform/5ED86DAC-A44F-411F-9A2B-AF8F0A338231/38FD7929-BEE8-41BC-ABBC-3E06321C7C0C/fa/انتقاد-و-پیشنهاد"
+                displaymode="new"
+                button="[data-btn-uploadSuggestion]"
+                resultsourceid="upload.datafooter"
+                OnRendered="RenderFormSuggestion"
+              ></basis>
+              <basis
+                core="api"
+                if="{##cms.uploadSuggestion.run|(false)##}"
+                run="atclient"
+                url="/schema/domainform/5ED86DAC-A44F-411F-9A2B-AF8F0A338231/fa/editobject"
+                method="post"
+                body="object_edit={##cms.uploadSuggestion.value##}&captcha={##cms.uploadSuggestion.captcha##}&captchaid={##cms.uploadSuggestion.captchaid##}"
+                content-type="application/x-www-form-urlencoded"
+                triggers="cms.uploadSuggestion"
+                OnProcessed="OnProcessedEditObjectSuggestion"
+              ></basis>
+              <basis
+                core="callback"
+                run="atclient"
+                method="uploadDocumensuggestion"
+                triggers="upload.datafooter"
+              ></basis>
+              <div class="captcha-button">
+                <div
+                  id="captchaContainer"
+                  class="captchaContainerclass w-full captcha-sefaresh ml-2.5 max-xl:ml-0 max-xl:mb-[20px]"
+                  data-bc-answer-container
+                  data-bc-schema-info-multi="0"
+                  data-bc-schema-info-word="58"
+                  data-bc-schema-info-part="1"
+                  data-bc-schema-info-part-0-type="text"
+                >
+                  <basis
+                    core="dbsource"
+                    source="trust_login"
+                    name="captcha"
+                    run="atclient"
+                    triggers="captcha.refreshFooter"
+                  >
+                    <member
+                      name="code1"
+                      type="scalar"
+                      request="captcha"
+                    ></member>
+                  </basis>
+                  <basis
+                    datamembername="captcha.code1"
+                    core="print"
+                    run="atclient"
+                    OnRendered="captchaRenderedSuggestion"
+                  >
+                    <face>
+                      <script type="text/template">
+                                      <div class="flex w-full justify-between "><div class="flex lg:flex-row w-full items-center justify-between">
+
+                           <div class="float-right w-full lg:w-fit"><input type="text" class="contactUsInput codeinputm bg-white rounded-2xl p-3" name="captcha" maxlength="4" placeholder="Security code"/><input type="hidden" name="captchaid" value="@captcha@" /></div>
+                        <div class="float-right mt-7 lg:mt-0 bvgvkek h-fit leading-[65px] px-4 flex items-center gap-2">
+                         <img loading="lazy" src="/@captcha@" width="120" height="60" alt="captcha" />
+                          <svg class="cursor-pointer inline-block align-middle" onclick="refreshCaptchaSuggestion()" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.1247 8.56165H18.1238C18.0007 8.56175 17.8788 8.5861 17.7651 8.63331C17.6514 8.68052 17.5481 8.74967 17.4611 8.8368C17.3741 8.92393 17.3052 9.02734 17.2581 9.14113C17.2111 9.25492 17.187 9.37685 17.1871 9.49997C17.1859 10.8143 16.8245 12.1032 16.1421 13.2265C15.4597 14.3498 14.4824 15.2646 13.3166 15.8714C12.1507 16.4782 10.8408 16.7538 9.52921 16.6683C8.21765 16.5827 6.95463 16.1393 5.87744 15.3862C2.63134 13.1132 1.83959 8.62309 4.11255 5.37696C6.38552 2.13083 10.8757 1.33899 14.1218 3.61204C14.6129 3.95501 15.0592 4.358 15.4504 4.81165H12.8121C12.5635 4.81165 12.325 4.91042 12.1492 5.08623C11.9734 5.26205 11.8746 5.5005 11.8746 5.74915C11.8746 5.99779 11.9734 6.23624 12.1492 6.41206C12.325 6.58787 12.5635 6.68665 12.8121 6.68665H17.1871C17.4358 6.68665 17.6742 6.58787 17.85 6.41206C18.0259 6.23624 18.1246 5.99779 18.1246 5.74915V1.37415C18.1246 1.12551 18.0259 0.887048 17.85 0.711233C17.6742 0.535418 17.4358 0.436646 17.1871 0.436646C16.9385 0.436646 16.7 0.535418 16.5242 0.711233C16.3484 0.887048 16.2496 1.12551 16.2496 1.37415V2.93536C15.9206 2.62321 15.5689 2.33596 15.1973 2.07598C14.2225 1.39342 13.1228 0.909542 11.9609 0.651979C10.7991 0.394417 9.59797 0.368213 8.42603 0.574863C7.25409 0.781513 6.13433 1.21697 5.13067 1.85637C4.12702 2.49578 3.25914 3.3266 2.57658 4.30141C1.19808 6.27013 0.658111 8.70582 1.07546 11.0727C1.49281 13.4395 2.83329 15.5436 4.80201 16.9221C6.31776 17.9898 8.12639 18.563 9.98041 18.5633C10.5144 18.5631 11.0474 18.5162 11.5732 18.4233C13.6714 18.0531 15.5722 16.9556 16.9417 15.3235C18.3112 13.6914 19.062 11.6289 19.0621 9.49833C19.0619 9.24983 18.963 9.01159 18.7873 8.83596C18.6115 8.66032 18.3732 8.56166 18.1247 8.56165Z" fill="#18181B"/></svg>
+                            </div>
+
+                                                          </div></div>
+                      </script>
+                    </face>
+                  </basis>
+                  <button
+                    class="data-body-btn btn w-[111px] h-12 rounded-[10px]"
+                    type="button"
+                    data-btn-uploadSuggestion
+                  >
+                    ارسال
+                  </button>
+                </div>
+
+                <div
+                  class="Loading_Form hidden data-body-btn w-[126px] h-12 px-4 py-2 rounded-2xl justify-center items-center gap-2.5 flex"
+                >
+                  <div
+                    id="ballsWaveG"
+                    class="ext-zinc-50 text-base font-normal leading-normal"
+                  >
+                    <div id="ballsWaveG_1" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_2" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_3" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_4" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_5" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_6" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_7" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_8" class="ballsWaveG"></div>
+                  </div>
+                </div>
+                <div class="message-api text-right"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="w-full z-0 -translate-y-[315px]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d202.33638321245465!2d51.4164551!3d35.7659885!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e068e4f73ac05%3A0x3a17b6fb8eeb825!2sKavusiyeh%2C%20District%203%2C%20Tehran%2C%20Tehran%20Province!5e0!3m2!1sen!2s!4v1741070019808!5m2!1sen!2s"
+          defer=""
+          title="tinab"
+          class="inline w-full align-middle !border-0 border-none"
+          height="315"
+          loading="lazy"
+          target="_blank"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <basis core="print" datamembername="db.faq">
+        <layout>
+          <section class="flex mb-16 mt-[-200px] w-full justify-center">
+            <div
+              class="w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex items-start gap-7"
+            >
+              <div class="w-full h-full flex flex-col gap-6">
+                <p class="font-bold text-2xl text-primary-900">سوالات متداول</p>
+
+                <div class="flex flex-col w-full common-questions">
+                  <div
+                    id="q-box-1"
+                    class="parent-box flex flex-wrap gap-5 pt-4"
+                  >
+                    @child
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </layout>
+        <face filter="valueID<>4122630">
+          <div
+            class="flex group box-container !h-[70px] py-2 border rounded-lg bg-white px-4 border-zinc-300 w-full cursor-pointer transition-1 flex-col gap-2"
+          >
+            <div class="flex w-full justify-between items-center">
+              <p
+                id="question"
+                class="text-base group-hover:text-secondary-800 leading-6 text-primary-900"
+              >
+                @text
+              </p>
+
+              <span class="w-12 h-12 flex justify-center items-center">
+                <svg
+                  width="18"
+                  height="11"
+                  viewBox="0 0 18 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="group-hover:fill-primary-900"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M17.4141 1.62926L9.00006 10.0432L0.586061 1.62925L2.00006 0.215252L9.00006 7.21525L16.0001 0.215254L17.4141 1.62926Z"
+                    fill="#E0B276"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div
+              id="answer"
+              class="text-sm font-normal hidden transition-all duration-300 ease-in-out leading-6 text-zinc-800"
+            >
+              <div>@largetext</div>
+            </div>
+          </div>
+        </face>
+      </basis>
+
+      <section class="flex mb-16 w-full justify-center">
+        <div
+          class="w-full lg:w-[950px] rounded-lg xl:w-[1200px] 2xl:w-[1280px] flex flex-col items-start gap-3 bg-white p-5"
+        >
+          <p class="text-primary-900 text-2xl font-bold">
+            سوال خود را از ما بپرسید
+          </p>
+          <div id="your-questions-form" class="flex flex-col gap-2 w-full">
+            <basis
+              core="schema"
+              run="atclient"
+              schemaurl="/schema/domainform/5ED86DAC-A44F-411F-9A2B-AF8F0A338231/279AE57D-EF2C-445A-BBD2-80C7F22AD77D/fa/سوال-خود-را-از-ما-بپرسید"
+              displaymode="new"
+              button="[data-btn-uploadYourquestions]"
+              resultsourceid="upload.datayourq"
+              OnRendered="RenderFormYourquestions"
+            ></basis>
+            <basis
+              core="api"
+              if="{##cms.uploadYourquestions.run|(false)##}"
+              run="atclient"
+              url="/schema/domainform/5ED86DAC-A44F-411F-9A2B-AF8F0A338231/fa/editobject"
+              method="post"
+              body="object_edit={##cms.uploadYourquestions.value##}&captcha={##cms.uploadYourquestions.captcha##}&captchaid={##cms.uploadYourquestions.captchaid##}"
+              content-type="application/x-www-form-urlencoded"
+              triggers="cms.uploadYourquestions"
+              OnProcessed="OnProcessedEditObjecYourquestions"
+            ></basis>
+            <basis
+              core="callback"
+              run="atclient"
+              method="uploadDocumentYourquestions"
+              triggers="upload.datayourq"
+            >
+            </basis>
+            <div class="captcha-button">
+              <div
+                id="captchaContainer"
+                class="captchaContainerclass w-full captcha-sefaresh ml-2.5 max-xl:ml-0 max-xl:mb-[20px]"
+                data-bc-answer-container
+                data-bc-schema-info-multi="0"
+                data-bc-schema-info-word="58"
+                data-bc-schema-info-part="1"
+                data-bc-schema-info-part-0-type="text"
+              >
+                <basis
+                  core="dbsource"
+                  source="trust_login"
+                  name="captcha"
+                  run="atclient"
+                  triggers="captcha.refreshyq"
+                >
+                  <member name="code2" type="scalar" request="captcha"></member>
+                </basis>
+                <basis
+                  datamembername="captcha.code2"
+                  core="print"
+                  run="atclient"
+                  OnRendered="captchaRenderedYourquestions"
+                >
+                  <face>
+                    <script type="text/template">
+                          <div class="flex w-full justify-between ">
+                            <div class="flex lg:flex-row w-full items-center justify-between">
+                      <div class="float-right w-full lg:w-fit">
+                        <input type="text" class="contactUsInput codeinputm bg-white rounded-2xl p-3" name="captcha" maxlength="4" placeholder="Security code"/><input type="hidden" name="captchaid" value="@captcha@" /></div>
+                          <div class="float-right mt-7 lg:mt-0 bvgvkek h-fit leading-[65px] px-4 flex items-center gap-2">
+                           <img loading="lazy" src="/@captcha@" width="120" height="60" alt="captcha" />
+                            <svg class="cursor-pointer inline-block align-middle" onclick="refreshCaptchaYourquestions()" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.1247 8.56165H18.1238C18.0007 8.56175 17.8788 8.5861 17.7651 8.63331C17.6514 8.68052 17.5481 8.74967 17.4611 8.8368C17.3741 8.92393 17.3052 9.02734 17.2581 9.14113C17.2111 9.25492 17.187 9.37685 17.1871 9.49997C17.1859 10.8143 16.8245 12.1032 16.1421 13.2265C15.4597 14.3498 14.4824 15.2646 13.3166 15.8714C12.1507 16.4782 10.8408 16.7538 9.52921 16.6683C8.21765 16.5827 6.95463 16.1393 5.87744 15.3862C2.63134 13.1132 1.83959 8.62309 4.11255 5.37696C6.38552 2.13083 10.8757 1.33899 14.1218 3.61204C14.6129 3.95501 15.0592 4.358 15.4504 4.81165H12.8121C12.5635 4.81165 12.325 4.91042 12.1492 5.08623C11.9734 5.26205 11.8746 5.5005 11.8746 5.74915C11.8746 5.99779 11.9734 6.23624 12.1492 6.41206C12.325 6.58787 12.5635 6.68665 12.8121 6.68665H17.1871C17.4358 6.68665 17.6742 6.58787 17.85 6.41206C18.0259 6.23624 18.1246 5.99779 18.1246 5.74915V1.37415C18.1246 1.12551 18.0259 0.887048 17.85 0.711233C17.6742 0.535418 17.4358 0.436646 17.1871 0.436646C16.9385 0.436646 16.7 0.535418 16.5242 0.711233C16.3484 0.887048 16.2496 1.12551 16.2496 1.37415V2.93536C15.9206 2.62321 15.5689 2.33596 15.1973 2.07598C14.2225 1.39342 13.1228 0.909542 11.9609 0.651979C10.7991 0.394417 9.59797 0.368213 8.42603 0.574863C7.25409 0.781513 6.13433 1.21697 5.13067 1.85637C4.12702 2.49578 3.25914 3.3266 2.57658 4.30141C1.19808 6.27013 0.658111 8.70582 1.07546 11.0727C1.49281 13.4395 2.83329 15.5436 4.80201 16.9221C6.31776 17.9898 8.12639 18.563 9.98041 18.5633C10.5144 18.5631 11.0474 18.5162 11.5732 18.4233C13.6714 18.0531 15.5722 16.9556 16.9417 15.3235C18.3112 13.6914 19.062 11.6289 19.0621 9.49833C19.0619 9.24983 18.963 9.01159 18.7873 8.83596C18.6115 8.66032 18.3732 8.56166 18.1247 8.56165Z" fill="#18181B"/></svg>
+                              </div>
+
+                                                            </div></div>
+                    </script>
+                  </face>
+                </basis>
+                <button
+                  class="data-body-btn btn w-[111px] h-12 rounded-[10px]"
+                  type="button"
+                  data-btn-uploadYourquestions
+                >
+                  ارسال
+                </button>
+              </div>
+
+              <div
+                class="Loading_Form hidden data-body-btn w-[126px] h-12 px-4 py-2 rounded-2xl justify-center items-center gap-2.5 flex"
+              >
+                <div
+                  id="ballsWaveG"
+                  class="ext-zinc-50 text-base font-normal leading-normal"
+                >
+                  <div id="ballsWaveG_1" class="ballsWaveG"></div>
+                  <div id="ballsWaveG_2" class="ballsWaveG"></div>
+                  <div id="ballsWaveG_3" class="ballsWaveG"></div>
+                  <div id="ballsWaveG_4" class="ballsWaveG"></div>
+                  <div id="ballsWaveG_5" class="ballsWaveG"></div>
+                  <div id="ballsWaveG_6" class="ballsWaveG"></div>
+                  <div id="ballsWaveG_7" class="ballsWaveG"></div>
+                  <div id="ballsWaveG_8" class="ballsWaveG"></div>
+                </div>
+              </div>
+              <div class="message-api text-right"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <basis core="call" file="footer.inc" />
+  </body>
+</html>

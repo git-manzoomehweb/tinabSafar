@@ -1,0 +1,444 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  lid="1"
+  mid="1"
+  usedforid="[##cms.query.id##]"
+>
+  <member request="json-ld" type="scalar" name="json" />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="1"
+  usedforid="[##cms.query.id##]"
+>
+  <member propertyid="7249" name="view" type="view" />
+  <member
+    name="related-tour"
+    size="262x262"
+    type="list"
+    blgid="221"
+    propertyid="10000504,8077,8181,8076,77191,77192,77193,77267,77330"
+    typeid="159"
+    link="tour.bc"
+    perpage="20"
+  />
+  <member
+    name="related-article"
+    type="list"
+    blgid="222"
+    link="article.bc"
+    propertyid="7244,7248,7249,7227,77320"
+    typeid="159"
+  />
+  <member name="data" type="view" request="rdfa" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="media"
+  lid="1"
+  name="db"
+  usedforid="[##cms.query.id##]"
+  sourcemid="article"
+>
+  <member type="list" name="gallery" format="4" order="ord"></member>
+</basis>
+<basis
+  core="dbsource"
+  source="userbehavior"
+  name="db"
+  usedforid="[##cms.query.id##]"
+>
+  <member name="comment" type="list" order="ord" request="listcomment" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="navigation"
+    type="tree"
+    request="navcatid"
+    parentid="[##cms.query.catid##]"
+  />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="1"
+  name="db"
+  catid="213011"
+>
+  <member
+    name="news-list"
+    type="list"
+    typeid="159"
+    propertyid="7244"
+    order="ord"
+  />
+</basis>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>
+      [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری تیناب سفر پارسه)##]
+    </title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  تیناب سفر پارسه)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="relative">
+    <basis core="call" file="header.inc" />
+    <main class="w-full px-5 flex mt-12 justify-center overflow-x-hidden">
+      <div
+        class="w-full relative lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex flex-col items-start gap-4"
+      >
+        <div class="w-full flex flex-col gap-3">
+          <basis core="print" datamembername="db.view">
+            <face filter="TypeID=159">
+              <img
+                loading="lazy"
+                width="827"
+                height="428"
+                src="@text"
+                alt="@Question"
+                class="w-full rounded-xl h-192"
+              />
+            </face>
+          </basis>
+          <div
+            class="w-full flex flex-col gap-3 bcjbcabh bg-white rounded-[10px] border border-zinc-300 p-5"
+          >
+            <basis core="print" datamembername="db.view">
+              <face filter="TypeID=150">
+                <h1
+                  class="text-zinc-900 font-bold w-full pb-3 border-b border-zinc-300"
+                >
+                  @text
+                </h1>
+              </face>
+            </basis>
+            <basis core="print" datamembername="db.view">
+              <face filter="TypeID<>150 and TypeID<>159 and TypeID<>128">
+                <h2 id="@valueID" class="text-zinc-900 font-bold">@text</h2>
+                <div class="text-sm text-zinc-900">@largetext</div>
+              </face>
+            </basis>
+          </div>
+        </div>
+        <div class="w-full flex flex-col gap-3">
+          <basis core="print" datamembername="db.view">
+            <layout>
+              <div
+                class="w-full bg-white pb-3 rounded-lg border border-zinc-300 flex flex-col gap-[29px]"
+              >
+                <p class="text-primary-900 font-bold px-4 pt-3">تیتر ها</p>
+                @child
+              </div>
+            </layout>
+            <face
+              filter="TypeID<>150 and TypeID<>159 and TypeID<>128 and text <> ''"
+            >
+              <div
+                data-id="@valueID"
+                onclick="Set_Offset_Item(this)"
+                class="bfr-link font-bold cursor-pointer relative pr-9 hover:text-primary-600 transition-1"
+              >
+                @text
+              </div>
+            </face>
+          </basis>
+
+          <basis core="print" datamembername="db.related-tour">
+            <layout>
+              <div
+                class="w-full bg-white p-3 rounded-lg border border-zinc-300 flex flex-col gap-6"
+              >
+                <p
+                  class="text-primary-900 font-bold w-full pb-3 pt-2 border-b border-zinc-300"
+                >
+                  تور های مرتبط
+                </p>
+                @child
+              </div>
+            </layout>
+            <face filter="link is null">
+              <article
+                class="w-full relative h-[417px] flex flex-col justify-center items-center"
+              >
+                <img
+                  loading="lazy"
+                  width="262"
+                  height="262"
+                  src="@00262X00262prp"
+                  alt="@title"
+                  class="rounded-full h-[262px] top-0 w-[262px] absolute z-0"
+                />
+                <div
+                  class="w-full p-5 flex flex-col justify-between mt-36 h-[239px] bg-background-1 rounded-lg border border-zinc-400 z-[2]"
+                >
+                  <p class="font-bold text-zinc-900">@title</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <img
+                        loading="lazy"
+                        class="size-5"
+                        width="40"
+                        height="40"
+                        src="../../images/Time-Circle.png"
+                        alt="Time"
+                      />
+                      <p class="text-sm text-zinc-900 whitespace-nowrap">
+                        @prp_8076
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <img
+                        loading="lazy"
+                        class="size-6"
+                        width="48"
+                        height="48"
+                        src="../../images/Calendar.png"
+                        alt="Calendar"
+                      />
+                      <p class="text-sm text-zinc-900 whitespace-nowrap">
+                        @prp_8077
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex flex-col w-full justify-between items-start gap-5"
+                  >
+                    <div class="w-full flex mt-4 items-center gap-2">
+                      <span class="airplane">
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M19.3551 13.1926L17.8971 11.7326C17.791 11.6276 17.6471 11.5736 17.4941 11.5886L14.9991 11.8326L13.2301 9.70456L17.5781 5.28655C17.673 5.18955 17.725 5.05655 17.7211 4.92054C17.7171 4.78354 17.657 4.65455 17.555 4.56355C17.397 4.42155 17.246 4.27854 17.0961 4.13854C16.715 3.78054 16.3551 3.44255 15.9391 3.14955C15.2521 2.65855 14.392 2.58855 13.3861 2.94255C11.923 3.44455 10.1991 4.04455 8.49505 4.68654C8.26905 4.76854 8.23505 4.75455 8.07805 4.58655L7.93805 4.44255C7.14805 3.63454 6.33305 2.79955 5.47405 2.02354C4.25705 0.930541 2.39105 0.312541 1.16805 1.54254C-0.0509494 2.76555 0.56405 4.63255 1.65405 5.85155C2.49005 6.77255 3.37805 7.64256 4.21805 8.45656C4.38405 8.61556 4.39405 8.65756 4.31405 8.86956C3.68105 10.5476 3.08105 12.2756 2.56805 13.7616C2.21205 14.7836 2.27905 15.6186 2.77405 16.3176C3.07305 16.7356 3.43005 17.1146 3.77405 17.4826C3.91205 17.6296 4.05105 17.7776 4.18905 17.9306C4.28105 18.0316 4.41005 18.0916 4.54605 18.0956C4.67905 18.0936 4.81505 18.0466 4.91205 17.9516C6.20905 16.6716 8.49405 14.4236 9.33405 13.5986L11.4731 15.3606L11.2141 17.8646C11.199 18.0146 11.2521 18.1626 11.3581 18.2696L12.8151 19.7296C12.9091 19.8236 13.0371 19.8766 13.1691 19.8766C13.1891 19.8766 13.2091 19.8756 13.2301 19.8726C13.3821 19.8536 13.5181 19.7656 13.5981 19.6336L15.7211 16.1006L19.2581 13.9746C19.3911 13.8956 19.4791 13.7596 19.4971 13.6076C19.5161 13.4546 19.4631 13.3016 19.3551 13.1926Z"
+                            fill="#99C5DF"
+                          />
+                        </svg>
+                      </span>
+                      <p class="font-medium text-base text-zinc-900">
+                        @prp_10000504
+                      </p>
+                    </div>
+                    <p class="font-medium text-base text-zinc-900">@prp_8181</p>
+                    <div class="flex w-full items-center gap-2">
+                      <a class="hover:animate-bounce" href="tel:02188781900">
+                        <img
+                          loading="lazy"
+                          width="96"
+                          height="96"
+                          class="w-12 h-12 rounded-full hovered"
+                          src="../../images/tel2.png"
+                          alt="phone"
+                        />
+                      </a>
+                      <a
+                        class="bg-primary-900 rounded-lg w-[80%] h-12 flex items-center justify-center text-white hover:bg-secondary-800 hovered"
+                        href="/tour.bc?lid=1&id=@id"
+                        >مشاهده جزئیات</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </face>
+            <face>
+              <article
+                class="w-full relative h-[417px] flex flex-col justify-center items-center"
+              >
+                <img
+                  loading="lazy"
+                  width="262"
+                  height="262"
+                  src="@00262X00262prp"
+                  alt="@title"
+                  class="rounded-full h-[262px] top-0 w-[262px] absolute z-0"
+                />
+                <div
+                  class="w-full p-5 flex flex-col justify-between mt-36 h-[239px] bg-background-1 rounded-lg border border-zinc-400 z-[2]"
+                >
+                  <p class="font-bold text-zinc-900">@title</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <img
+                        loading="lazy"
+                        class="size-5"
+                        width="40"
+                        height="40"
+                        src="../../images/Time-Circle.png"
+                        alt="Time"
+                      />
+                      <p class="text-sm text-zinc-900 whitespace-nowrap">
+                        @prp_8076
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <img
+                        loading="lazy"
+                        class="size-6"
+                        width="48"
+                        height="48"
+                        src="../../images/Calendar.png"
+                        alt="Calendar"
+                      />
+                      <p class="text-sm text-zinc-900 whitespace-nowrap">
+                        @prp_8077
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex flex-col w-full justify-between items-start gap-5"
+                  >
+                    <div class="w-full flex mt-4 items-center gap-2">
+                      <span class="airplane">
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M19.3551 13.1926L17.8971 11.7326C17.791 11.6276 17.6471 11.5736 17.4941 11.5886L14.9991 11.8326L13.2301 9.70456L17.5781 5.28655C17.673 5.18955 17.725 5.05655 17.7211 4.92054C17.7171 4.78354 17.657 4.65455 17.555 4.56355C17.397 4.42155 17.246 4.27854 17.0961 4.13854C16.715 3.78054 16.3551 3.44255 15.9391 3.14955C15.2521 2.65855 14.392 2.58855 13.3861 2.94255C11.923 3.44455 10.1991 4.04455 8.49505 4.68654C8.26905 4.76854 8.23505 4.75455 8.07805 4.58655L7.93805 4.44255C7.14805 3.63454 6.33305 2.79955 5.47405 2.02354C4.25705 0.930541 2.39105 0.312541 1.16805 1.54254C-0.0509494 2.76555 0.56405 4.63255 1.65405 5.85155C2.49005 6.77255 3.37805 7.64256 4.21805 8.45656C4.38405 8.61556 4.39405 8.65756 4.31405 8.86956C3.68105 10.5476 3.08105 12.2756 2.56805 13.7616C2.21205 14.7836 2.27905 15.6186 2.77405 16.3176C3.07305 16.7356 3.43005 17.1146 3.77405 17.4826C3.91205 17.6296 4.05105 17.7776 4.18905 17.9306C4.28105 18.0316 4.41005 18.0916 4.54605 18.0956C4.67905 18.0936 4.81505 18.0466 4.91205 17.9516C6.20905 16.6716 8.49405 14.4236 9.33405 13.5986L11.4731 15.3606L11.2141 17.8646C11.199 18.0146 11.2521 18.1626 11.3581 18.2696L12.8151 19.7296C12.9091 19.8236 13.0371 19.8766 13.1691 19.8766C13.1891 19.8766 13.2091 19.8756 13.2301 19.8726C13.3821 19.8536 13.5181 19.7656 13.5981 19.6336L15.7211 16.1006L19.2581 13.9746C19.3911 13.8956 19.4791 13.7596 19.4971 13.6076C19.5161 13.4546 19.4631 13.3016 19.3551 13.1926Z"
+                            fill="#99C5DF"
+                          />
+                        </svg>
+                      </span>
+                      <p class="font-medium text-base text-zinc-900">
+                        @prp_10000504
+                      </p>
+                    </div>
+                    <p class="font-medium text-base text-zinc-900">@prp_8181</p>
+                    <div class="flex w-full items-center gap-2">
+                      <a class="hover:animate-bounce" href="tel:02188781900">
+                        <img
+                          loading="lazy"
+                          width="96"
+                          height="96"
+                          class="w-12 h-12 rounded-full hovered"
+                          src="../../images/tel2.png"
+                          alt="phone"
+                        />
+                      </a>
+                      <a
+                        class="bg-primary-900 rounded-lg w-[80%] h-12 flex items-center justify-center text-white hover:bg-secondary-800 hovered"
+                        href="@link"
+                        >مشاهده جزئیات</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </face>
+          </basis>
+
+          <basis core="print" datamembername="db.related-article">
+            <layout>
+              <div
+                class="w-full flex flex-col gap-4 p-4 rounded-lg bg-white border border-zinc-300"
+              >
+                <p
+                  class="text-primary-900 font-bold pb-3 border-b border-zinc-200"
+                >
+                  آخرین مطالب
+                </p>
+                @child
+              </div>
+            </layout>
+            <face filter="link is null">
+              <a href="/article.bc?lid=1&id=@id" class="flex wxyz gap-2 w-full">
+                <img
+                  loading="lazy"
+                  class="w-[27%] h-[96px] rounded-lg"
+                  width="96"
+                  height="96"
+                  src="@image"
+                  alt="@title"
+                />
+                <div
+                  class="w-[73%] flex flex-col p-3 h-[94px] gap-2 bg-secondary-50 border border-secondary-100 rounded-lg"
+                >
+                  <p class="line-clamp-1 text-zinc-900 font-medium">@title</p>
+                  <p class="line-clamp-2 text-zinc-900 !text-sm">@prp_7244</p>
+                </div>
+              </a>
+            </face>
+            <face>
+              <a href="@link" class="flex wxyz gap-2 w-full">
+                <img
+                  loading="lazy"
+                  class="w-[27%] h-[96px] rounded-lg"
+                  width="96"
+                  height="96"
+                  src="@image"
+                  alt="@title"
+                />
+                <div
+                  class="w-[73%] flex flex-col p-3 h-[94px] gap-2 bg-secondary-50 border border-secondary-100 rounded-lg"
+                >
+                  <p class="line-clamp-1 text-zinc-900 font-medium">@title</p>
+                  <p class="line-clamp-2 text-zinc-900 !text-sm">@prp_7244</p>
+                </div>
+              </a>
+            </face>
+          </basis>
+        </div>
+      </div>
+    </main>
+    <basis core="call" file="footer.inc" />
+  </body>
+</html>
