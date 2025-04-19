@@ -8,6 +8,33 @@ navOpener.addEventListener("click", () => {
 navCloser.addEventListener("click", () => {
   mobileMenu.classList.add("translate-x-[7000px]");
 });
+megamenuItems = document.querySelectorAll(".mobile-megamenu");
+megamenuItems.forEach((item) => {
+  navCloser.addEventListener("click", () => {
+    if (!item.classList.contains("hidden")) {
+      item.classList.add("hidden");
+    }
+  });
+});
+
+navSpans = document.querySelectorAll("#parent-nav span");
+
+navSpans.forEach((item) => {
+  navCloser.addEventListener("click", () => {
+    if (item.classList.contains("rotate-180")) {
+      item.classList.remove("rotate-180");
+    }
+  });
+});
+
+megamenuItems.forEach((item) => {
+  navCloser.addEventListener("click", () => {
+    if (!item.classList.contains("hidden")) {
+      item.classList.add("hidden");
+    }
+  });
+});
+
 function checkMenuState() {
   const menu = document.querySelector(".menu-mob");
   if (!menu) return;
@@ -471,28 +498,29 @@ async function RenderFormSuggestion() {
 // ______________________footerBox------------------------
 // ______________________footerBox------------------------
 // ______________________footerBox------------------------
-function toggleBox() {
-  const box = document.querySelector("footer .fixed.bg-secondary-700");
-  box.classList.add("transition-1");
-  box.style.transform = "translateX(-100%)";
-  let isVisible = false;
+// function toggleBox() {
+//   const box = document.querySelector("footer .fixed.bg-secondary-700");
+//   box.classList.add("transition-1");
+//   box.style.transform = "translateX(-100%)";
+//   let isVisible = false;
 
-  setInterval(() => {
-    if (isVisible) {
-      box.style.transform = "translateX(-100%)";
-    } else {
-      box.style.transform = "translateX(0)";
-    }
-    isVisible = !isVisible;
-  }, 20000);
+//   setInterval(() => {
+//     if (isVisible) {
+//       box.style.transform = "translateX(-100%)";
+//     } else {
+//       box.style.transform = "translateX(0)";
+//     }
+//     isVisible = !isVisible;
+//   }, 20000);
 
-  setTimeout(() => {
-    box.style.transform = "translateX(0)";
-    isVisible = true;
-  }, 13000);
-}
+//   setTimeout(() => {
+//     box.style.transform = "translateX(0)";
+//     isVisible = true;
+//   }, 13000);
+// }
 
-document.addEventListener("DOMContentLoaded", toggleBox);
+// document.addEventListener("DOMContentLoaded", toggleBox);
+
 // _________________your-questions----------------------------
 // _________________your-questions----------------------------
 // _________________your-questions----------------------------
@@ -777,5 +805,19 @@ async function OnProcessedEditObject(args) {
     }, 2000);
   }
 }
-// ___________________________________________________________________________
+// ___________________________________________
+// document.querySelectorAll(".group\\/level2.relative").forEach((groupEl) => {
+//   const hasSubmenu = groupEl.querySelector("ul.w-44.cstm-drp.-left-44");
 
+//   if (hasSubmenu) {
+//     const anchor = groupEl.querySelector("a");
+//     if (anchor) {
+//       const svgHTML = `
+//         <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;">
+//           <path d="M0.826172 6C0.826172 5.87891 0.851172 5.75781 0.901172 5.63672C0.951172 5.51563 1.01617 5.42481 1.09617 5.36426L5.56617 0.823242C5.74617 0.641602 5.97617 0.550781 6.25617 0.550781C6.53617 0.550781 6.77617 0.641602 6.97617 0.823242C7.15617 1.02507 7.24617 1.26725 7.24617 1.54981C7.24617 1.83236 7.15617 2.06445 6.97617 2.24609L3.13617 6.12109L6.97617 9.99609C7.15617 10.1979 7.24617 10.4401 7.24617 10.7227C7.24617 11.0052 7.15617 11.2373 6.97617 11.4189C6.77617 11.6208 6.53617 11.7217 6.25617 11.7217C5.97617 11.7217 5.74617 11.6208 5.56617 11.4189L1.09617 6.9082C1.01617 6.70638 0.951172 6.53483 0.901172 6.39356C0.851172 6.25228 0.826172 6.12109 0.826172 6Z" fill="black"></path>
+//         </svg>
+//       `;
+//       anchor.insertAdjacentHTML("afterend", svgHTML);
+//     }
+//   }
+// });

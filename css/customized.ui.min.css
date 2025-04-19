@@ -1,3 +1,14 @@
+#child1-nav div.flex.w-full.justify-between.w-full a,
+#child2-nav .w-full.py-1.px-4 a,
+#child2-nav div.w-full.px-2.py-4 a {
+  font-weight: 600;
+  font-size: 14px !important;
+  color: var(--secondary-600);
+}
+#search-box .Basis_Date_Box label span,
+.h1-classs {
+  white-space: nowrap;
+}
 a,
 hr {
   color: inherit;
@@ -467,8 +478,8 @@ video {
 .h-\[20\%\] {
   height: 20%;
 }
-.h-\[15\%\] {
-  height: 15%;
+.h-\[11\%\] {
+  height: 11%;
 }
 .h-\[85\%\] {
   height: 85%;
@@ -481,6 +492,7 @@ video {
 #contact-form-resize .qs-phone-def [data-bc-question-title]*,
 #contact-form-resize .qs-radio-def,
 #contact-form-resize .qs-radio-def [data-bc-answer-container],
+#contact-form-resize [data-bc-schema-main-container],
 #contact-form-resize [data-bc-schema-main-container] [data-bc-answer-container],
 #contact-form-resize
   [data-bc-schema-main-container]
@@ -489,8 +501,12 @@ video {
   *,
 #suggestion-form .qs-ent-descr,
 #suggestion-form .qs-ent-descr *,
+#suggestion-form [data-bc-question]:nth-child(3),
+.Wrapper-ExteraHoteldate,
+.Wrapper-ExteraHoteldate .Basis_Date_Box,
 .Wrapper-ExteraHoteldate.w-1\/3,
 .\!w-full,
+.qs-ent-descr,
 .qs-radio-def {
   width: 100% !important;
 }
@@ -553,11 +569,15 @@ video {
 #visa-form .birth-place-qs,
 #visa-form .pass-li-qs,
 #visa-form .qs-addrr,
+#visa-form .qs-country-pass,
+#visa-form .qs-country-v,
 #visa-form .qs-email,
+#visa-form .qs-end-v,
 #visa-form .qs-nationality,
 #visa-form .qs-pass-num,
 #visa-form .qs-phonnum,
 #visa-form .qs-prev-nationality,
+#visa-form .qs-start-v,
 #visa-form .qs-travel-goal,
 #visa-form .sabet-qs,
 #visa-form .visa-qs-fname,
@@ -571,9 +591,7 @@ video {
 .multicity-flight-form .flight-routes,
 .multicity-flight-form .reserve-search,
 .one-btb-flight-form .Flightclass-Passenger,
-.w-full,
-#visa-form .qs-country-pass,
-#visa-form .qs-country-v {
+.w-full {
   width: 100%;
 }
 .translate-x-\[7000px\] {
@@ -1266,8 +1284,9 @@ html {
   #search-box .form-search.formflight .flight-routes {
     width: 60% !important;
   }
+  #flightHotelSearch .Basis_Date_Box,
   #search-box .form-search.formflight .Basis_Date_Box {
-    width: 44% !important;
+    width: 40% !important;
   }
   #search-box .reserve-field.flightclass-field {
     height: 2rem !important;
@@ -1315,9 +1334,6 @@ html {
   #r-hotel .Basis_Date_Box,
   #r-hotel .reserve-field.h-20.departure-route {
     width: 100%;
-  }
-  #flightHotelSearch .Basis_Date_Box {
-    width: 40% !important;
   }
   .multicity-flight-form .route-content {
     border-bottom: 1px solid var(--zinc-300) !important;
@@ -1535,6 +1551,7 @@ html {
   box-shadow: 0 4px 4px 0 #00000040 !important;
   border-radius: 8px !important;
 }
+#contact-form-resize .message-api,
 #search-box .flighttype-items li.active-r-btn span,
 #search-box .flighttype-items li:hover span,
 .multiroute-fields .add-routs:hover span {
@@ -1588,9 +1605,6 @@ html {
 #search-box form .click-content label.float-right svg {
   transform: translateY(11px);
 }
-#search-box .Basis_Date_Box label span {
-  white-space: nowrap;
-}
 #search-box .Basis_Date_Box input {
   padding-right: 43px;
   margin-top: 0 !important;
@@ -1640,10 +1654,6 @@ html {
   overflow-x: hidden !important;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.15) 0 5px 15px 0;
-}
-.FlightClass-text {
-  cursor: pointer;
-  font-size: 14px !important;
 }
 .searchList li.bg-bgColor-100 {
   color: #fff !important;
@@ -1825,20 +1835,13 @@ nav.menu-mob {
   box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0,
     rgba(60, 64, 67, 0.15) 0 2px 6px 2px !important;
 }
+#child1-nav div.flex.w-full.justify-between.w-full,
+#child1-nav ul.flex-col div.px-4,
+[data-bc-section] {
+  padding: 0 !important;
+}
 .cstm-drp a:hover {
   color: var(--secondary-500) !important;
-}
-#child2-nav {
-  /* padding: 0 2.3rem; */
-}
-#child1-nav div.flex.w-full.justify-between.w-full a {
-  color: var(--secondary-600);
-  /* padding: 0.2rem 0; */
-  font-weight: 600;
-  font-size: 14px !important;
-}
-#child1-nav div.flex.w-full.justify-between.w-full {
-  padding: 0 !important;
 }
 #child2-nav {
   margin-top: 0.5rem !important;
@@ -1849,11 +1852,9 @@ nav.menu-mob {
 #child1-nav span.transition-all svg {
   margin-left: 0.25rem !important;
 }
-#child2-nav .w-full.py-1.px-4 a {
-  color: var(--secondary-600);
+#child2-nav .w-full.py-1.px-4 a,
+#child2-nav div.w-full.px-2.py-4 a {
   padding: 0.2rem 0;
-  font-weight: 600;
-  font-size: 14px !important;
 }
 #contact-form-resize [data-bc-section-title] {
   color: #fff !important;
@@ -1926,7 +1927,6 @@ nav.menu-mob {
 }
 [data-bc-section] {
   margin-bottom: 0 !important;
-  padding: 0 !important;
 }
 #contact-form-resize .bvgvkek img {
   width: 100px !important;
@@ -1941,7 +1941,14 @@ nav.menu-mob {
   margin-left: 0;
 }
 .h1-classs {
-  transform: translate(1000000px, 1000000px);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border-width: 0;
 }
 .toungehsj {
   width: 300px !important;
@@ -2090,9 +2097,11 @@ nav.menu-mob {
   #visa-form .pass-li-qs,
   #visa-form .qs-addrr,
   #visa-form .qs-email,
+  #visa-form .qs-end-v,
   #visa-form .qs-nationality,
   #visa-form .qs-pass-num,
   #visa-form .qs-phonnum,
+  #visa-form .qs-start-v,
   #visa-form .qs-travel-goal,
   #visa-form .sabet-qs,
   #visa-form .visa-qs-fname,
@@ -2101,9 +2110,7 @@ nav.menu-mob {
   #your-questions-form
     [data-bc-schema-main-container]
     > [data-bc-schema-column]:first-child,
-  #your-questions-form fieldset,
-  #visa-form .qs-start-v,
-  #visa-form .qs-end-v {
+  #your-questions-form fieldset {
     width: 49% !important;
   }
   #suggestion-form .captchaContainerclass,
@@ -2123,6 +2130,13 @@ nav.menu-mob {
   #visa-form .qs-prev-nationality {
     width: 99% !important;
   }
+}
+#child1-nav ul.flex-col a:hover,
+#suggestion-form .message-api,
+#suggestion-form input,
+#your-questions-form input,
+.mega-menu ul.w-44.cstm-drp.-left-44 a:hover {
+  color: var(--primary-900) !important;
 }
 [data-bc-schema-column] {
   display: flex !important;
@@ -2148,7 +2162,6 @@ nav.menu-mob {
   height: 61px;
   font-size: 16px;
   outline: 0 !important;
-  color: var(--primary-900) !important;
 }
 #suggestion-form input::placeholder {
   color: var(--primary-900) !important;
@@ -2167,7 +2180,6 @@ nav.menu-mob {
 #suggestion-form .message-api {
   text-align: center !important;
   font-size: 14px !important;
-  color: var(--primary-900) !important;
 }
 #your-questions-form [data-bc-schema-main-container] {
   width: 100%;
@@ -2189,7 +2201,6 @@ nav.menu-mob {
   height: 61px;
   font-size: 16px;
   outline: 0 !important;
-  color: var(--primary-900) !important;
   background-color: var(--zinc-100);
 }
 #your-questions-form input::placeholder {
@@ -2242,10 +2253,6 @@ nav.menu-mob {
   display: flex !important;
   flex-direction: column;
 }
-#visa-form .qs-start-v,
-#visa-form .qs-end-v {
-  width: 100%;
-}
 ::-webkit-scrollbar-track {
   background: #f4f4f5;
 }
@@ -2280,17 +2287,8 @@ nav .w-full.flex.overflow-auto.h-full::-webkit-scrollbar {
 footer div.w-full.pr-0.h-full.flex.flex-col.border-0 p.font-medium.text-white {
   font-size: 18px !important;
 }
-#contact-form-resize [data-bc-schema-main-container] {
-  width: 100% !important;
-}
 .justify-start {
   justify-content: start !important;
-}
-#suggestion-form [data-bc-question]:nth-child(3) {
-  width: 100% !important;
-}
-.qs-ent-descr {
-  width: 100% !important;
 }
 .passengerbox
   > div.w-full.h-8.leading-8.text-center.radius-type-1.border-type-1.cursor-pointer.text-sm {
@@ -2302,6 +2300,8 @@ footer div.w-full.pr-0.h-full.flex.flex-col.border-0 p.font-medium.text-white {
   align-items: center;
 }
 .FlightClass-text {
+  cursor: pointer;
+  font-size: 14px !important;
   width: 100%;
   height: 30px;
   padding: 0 9px;
@@ -2311,17 +2311,10 @@ footer div.w-full.pr-0.h-full.flex.flex-col.border-0 p.font-medium.text-white {
   border-radius: 4px !important;
   border: 1px solid var(--primary-950) !important;
 }
-.FlightClass-text:hover {
-  border: 1px solid var(--secondary-600) !important;
-  color: var(--secondary-600) !important;
-}
+.FlightClass-text:hover,
 .flightclass-field:hover .FlightClass-text {
   border: 1px solid var(--secondary-600) !important;
   color: var(--secondary-600) !important;
-}
-.Wrapper-ExteraHoteldate .Basis_Date_Box,
-.Wrapper-ExteraHoteldate {
-  width: 100% !important;
 }
 .main-operationUser-container.rtl-lang form input[type="password"] {
   background-color: var(--primary-50) !important;
@@ -2344,9 +2337,6 @@ footer div.w-full.pr-0.h-full.flex.flex-col.border-0 p.font-medium.text-white {
 #contact-form-resize [data-bc-validation-part] li {
   color: var(--secondary-300) !important;
 }
-#contact-form-resize .message-api {
-  color: white !important;
-}
 .swiper-one .swiper-pagination-bullet {
   width: 7px !important;
   height: 7px !important;
@@ -2358,6 +2348,194 @@ footer div.w-full.pr-0.h-full.flex.flex-col.border-0 p.font-medium.text-white {
   background: var(--primary-900) !important;
 }
 .free-form-content .validate-alert {
-  color: rgb(225, 0, 0) !important;
+  color: #e10000 !important;
   font-weight: 700 !important;
+}
+.group\/level2.relative {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0.4rem;
+  height: fit-content;
+  padding-left: 0.3rem !important;
+}
+.group\/level2.relative > a:first-child,
+.megamenu-items > a {
+  align-items: center;
+}
+div.cstm-drp.top-6 {
+  top: 1.7rem !important;
+}
+#child2-nav div.w-full.px-2.py-4 {
+  padding: 0 1rem !important;
+}
+#child1-nav ul.flex-col {
+  background-color: var(--zinc-100) !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0 3px 7px -3px !important;
+  border-radius: 8px !important;
+  padding: 0.2rem 0.1rem !important;
+  box-shadow: none !important;
+  display: flex;
+  background-color: transparent !important;
+}
+.mega-menu {
+  width: 1070px !important;
+  height: 431px !important;
+  padding: 2rem 1.5rem;
+  border-radius: 24px !important;
+  overflow: hidden;
+  z-index: 99999;
+}
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+.mega-menu .right-sc {
+  width: 30px;
+  position: absolute;
+  background: var(--primary-950) !important;
+  height: 100%;
+  top: 0;
+  right: 0 !important;
+}
+.mega-menu .megamenu-items {
+  margin-right: 35px;
+  height: 350px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.6rem;
+  overflow-y: auto;
+}
+.mega-menu .megamenu-items::-webkit-scrollbar {
+  display: none !important;
+}
+.mega-menu ul.w-44.cstm-drp.-left-44 {
+  box-shadow: none !important;
+  display: flex !important;
+  width: fit-content !important;
+  height: 120px !important;
+  overflow: hidden;
+}
+.mega-menu ul.w-44.cstm-drp.-left-44 div.flex.flex-col {
+  overflow-y: auto;
+  height: 130px;
+}
+.mega-menu ul.w-44.cstm-drp.-left-44 div.flex.flex-col::-webkit-scrollbar {
+  width: 3px !important;
+}
+#child1-nav ul.flex-col a,
+.mega-menu ul.w-44.cstm-drp.-left-44 a {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: var(--zinc-600) !important;
+}
+#child1-nav ul.flex-col a::before,
+.mega-menu ul.w-44.cstm-drp.-left-44 a::before,
+.mobile-mgm-items span.transition-all.duration-300.ease-in-out {
+  display: none !important;
+}
+.group\/level2.relative > a:first-child,
+.megamenu-items > a {
+  font-weight: 700 !important;
+  position: relative;
+  display: flex;
+  gap: 0.9rem;
+}
+.group\/level2.relative > a:first-child::before,
+.megamenu-items > a::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #bc945f;
+  border-radius: 4px;
+  transition: 0.3s ease-in-out;
+}
+.group\/level2.relative > a:first-child:hover::before,
+.megamenu-items > a:hover:before {
+  background-color: var(--primary-950) !important;
+  transform: rotate(45deg) !important;
+}
+.megamenu-items > a {
+  height: fit-content;
+}
+.mega-title {
+  margin-right: 35px;
+  font-weight: 700;
+  font-size: 24px !important;
+  margin-bottom: 3.4rem !important;
+}
+.left-sc-mob a,
+.mega-menu .left-sc a {
+  border-radius: 12px;
+  height: 70px !important;
+  background-color: var(--primary-900);
+}
+.left-sc-mob a:hover,
+.mega-menu .left-sc a:hover {
+  background: linear-gradient(90deg, #e0b276 0, #4b2d15 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 4px 0 #00000040 !important;
+}
+.mega-menu .first-cnt {
+  width: 70%;
+}
+.left-sc-mob img,
+.mega-menu .left-sc img {
+  height: 294px !important;
+}
+.mega-menu .left-sc {
+  width: 233px;
+}
+.mobile-megamenu {
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  padding: 0.81rem;
+  border-radius: 12px !important;
+}
+.mobile-mgm-items {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.mb-mg-title {
+  font-weight: 700;
+  margin: 0.9rem 0;
+}
+.mobile-mgm-items div.w-full.flex.justify-between.py-3 > a,
+.mobile-mgm-items > div.w-full.px-2.py-4 a,
+.mobile-mgm-items > div.w-full.px-4.py-1 a {
+  font-weight: 700 !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  height: fit-content;
+  color: var(--zinc-900) !important;
+}
+.mobile-mgm-items div.w-full.flex.justify-between.py-3 > a::before,
+.mobile-mgm-items > div.w-full.px-2.py-4 a::before,
+.mobile-mgm-items > div.w-full.px-4.py-1 a::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #bc945f;
+  border-radius: 4px;
+}
+.safarname-mgmn {
+  left: -140px !important;
+}
+#child2-nav {
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+    box-shadow: rgba(0, 0, 0, 0) 0 5px 15px;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  }
 }

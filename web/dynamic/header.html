@@ -177,242 +177,301 @@
         </div>
       </div>
     </div>
+
     <div class="w-full hidden lg:!flex justify-between items-center pb-4 pt-6">
-      <basis
-        core="tree"
-        datamembername="foreigntour.cat"
-        idcol="catid"
-        parentidcol="parentid"
-        nullvalue="213727"
+      <div
+        class="text-zinc-800 relative hidden lg:flex gap-3 cursor-pointer items-center group transition-all duration-300 text-base font-normal"
       >
-        <layout>
-          <div
-            class="text-zinc-800 relative hidden lg:flex gap-3 cursor-pointer items-center group transition-all duration-300 text-base font-normal"
-          >
-            <a
-              href="/تور-خارجی"
-              class="flex group items-center gap-4 text-sm font-normal hover:text-secondary-800 transition-1 text-primary-900"
+        <a
+          href="/تور-خارجی"
+          class="flex group items-center gap-4 text-sm font-normal hover:text-secondary-800 transition-1 text-primary-900"
+        >
+          <img
+            loading="lazy"
+            class="w-[28px] h-[28px]"
+            width="56"
+            height="56"
+            src="[##cms.cms.cdn##]/images/tour-foreign.png"
+            alt="tour-foreign"
+            aria-label="foreigntour"
+          />
+          تور خارجی
+          <span class="transition-1 group-hover:rotate-180">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <img
-                loading="lazy"
-                class="w-[28px] h-[28px]"
-                width="56"
-                height="56"
-                src="[##cms.cms.cdn##]/images/tour-foreign.png"
-                alt="tour-foreign"
-                aria-label="foreigntour"
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
+                fill="#274571"
               />
-              تور خارجی
-              <span class="transition-1 group-hover:rotate-180">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
-                    fill="#274571"
-                  />
-                </svg>
-              </span>
-            </a>
+            </svg>
+          </span>
+        </a>
 
-            <div
-              class="absolute shadow-md justify-between rounded-2xl hidden bg-white gap-4 w-44 cstm-drp h-fit group-hover:flex flex-col top-6"
-            >
-              @child
+        <div
+          class="absolute mega-menu shadow-md justify-between rounded-2xl hidden bg-white gap-4 w-44 cstm-drp h-fit group-hover:flex flex-col top-6"
+        >
+          <div class="right-sc"></div>
+          <div class="flex gap-4 justify-between w-full mg-container">
+            <div class="flex flex-col first-cnt">
+              <p class="mega-title">تور های خارجی</p>
+
+              <basis
+                core="tree"
+                datamembername="foreigntour.cat"
+                idcol="catid"
+                parentidcol="parentid"
+                nullvalue="213727"
+              >
+                <layout>
+                  <div class="megamenu-items">@child</div>
+                </layout>
+
+                <face level="end" filter="link is null">
+                  <a
+                    class="hover:text-primary-900 px-2"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title</a
+                  >
+                </face>
+                <face level="end">
+                  <a class="hover:text-primary-900 px-2" href="/@link"
+                    >@title</a
+                  >
+                </face>
+                <face level="1" filter="link is null">
+                  <div class="group/level2 relative">
+                    <a
+                      class="hover:text-primary-900 px-2"
+                      href="/tour-list.bc?catid=@catid"
+                      >@title
+                    </a>
+                    <ul
+                      class="shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col"
+                    >
+                      <div class="flex flex-col gap-4">@child</div>
+                    </ul>
+                  </div>
+                </face>
+                <face level="1">
+                  <div class="group/level2 relative">
+                    <a
+                      class="hover:text-primary-900 px-2"
+                      href="/tour-list.bc?catid=@catid"
+                      >@title
+                    </a>
+                    <ul
+                      class="shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col"
+                    >
+                      <div class="flex flex-col gap-4">@child</div>
+                    </ul>
+                  </div>
+                </face>
+                <face level="2" filter="link is null">
+                  <div class="group/level2 relative">
+                    <a
+                      class="hover:text-primary-900 px-2"
+                      href="/tour-list.bc?catid=@catid"
+                      >@title</a
+                    >
+                    <ul
+                      class="shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col"
+                    >
+                      <div class="flex flex-col gap-4">@child</div>
+                    </ul>
+                  </div>
+                </face>
+                <face level="2">
+                  <div class="group/level2 relative">
+                    <a
+                      class="hover:text-primary-900 px-2"
+                      href="/tour-list.bc?catid=@catid"
+                      >@title
+                    </a>
+                    <ul
+                      class="shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col"
+                    >
+                      <div class="flex flex-col gap-4">@child</div>
+                    </ul>
+                  </div>
+                </face>
+              </basis>
+            </div>
+            <div class="flex flex-col gap-4 left-sc">
+              <basis core="print" datamembername="foreigntour.cat">
+                <face filter="catid in(213727)">
+                  <img
+                    class="rounded-xl"
+                    height="294"
+                    width="233"
+                    src="@image"
+                    alt="تور-خارجی"
+                    loading="lazy"
+                  />
+                </face>
+              </basis>
+              <a
+                href="/تور-خارجی"
+                class="w-full flex justify-center items-center text-white rounded-xl"
+                >مشاهده تور های خارجی</a
+              >
             </div>
           </div>
-        </layout>
-        <face level="end" filter="link is null">
-          <a
-            class="hover:text-primary-900 px-2"
-            href="/tour-list.bc?catid=@catid"
-            >@title</a
-          >
-        </face>
-        <face level="end">
-          <a class="hover:text-primary-900 px-2" href="/@link">@title</a>
-        </face>
-        <face level="1" filter="link is null">
-          <div class="group/level2 relative">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/tour-list.bc?catid=@catid"
-              >@title
-            </a>
-            <ul
-              class="hidden shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col absolute"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="1">
-          <div class="group/level2 relative">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/tour-list.bc?catid=@catid"
-              >@title
-            </a>
-            <ul
-              class="hidden shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col absolute"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="2" filter="link is null">
-          <div class="group/level2 relative">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/tour-list.bc?catid=@catid"
-              >@title
-            </a>
-            <ul
-              class="hidden shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col absolute"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="2">
-          <div class="group/level2 relative">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/tour-list.bc?catid=@catid"
-              >@title
-            </a>
-            <ul
-              class="hidden shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col absolute"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-      </basis>
+        </div>
+      </div>
 
-      <basis
-        core="tree"
-        datamembername="innertour.cat"
-        idcol="catid"
-        parentidcol="parentid"
-        nullvalue="213726"
+      <div
+        class="text-zinc-800 relative hidden lg:flex gap-3 cursor-pointer items-center group transition-all duration-300 text-base font-normal"
       >
-        <layout>
-          <div
-            class="text-zinc-800 relative hidden lg:flex gap-3 cursor-pointer items-center group transition-all duration-300 text-base font-normal"
-          >
-            <a
-              href="/تور-داخلی"
-              class="flex group items-center gap-4 text-sm font-normal hover:text-secondary-800 transition-1 text-primary-900"
+        <a
+          href="/تور-داخلی"
+          class="flex group items-center gap-4 text-sm font-normal hover:text-secondary-800 transition-1 text-primary-900"
+        >
+          <img
+            loading="lazy"
+            class="w-[28px] h-[28px]"
+            width="56"
+            height="56"
+            src="[##cms.cms.cdn##]/images/inner-tour.png"
+            alt="inner-foreign"
+            aria-label="innertour"
+          />
+          تور داخلی
+          <span class="transition-1 group-hover:rotate-180">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <img
-                loading="lazy"
-                class="w-[28px] h-[28px]"
-                width="53"
-                height="52"
-                src="[##cms.cms.cdn##]/images/inner-tour.png"
-                alt="inner-tour"
-                aria-label="inner-tour"
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
+                fill="#274571"
               />
-              تور داخلی
-              <span class="transition-1 group-hover:rotate-180">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
-                    fill="#274571"
-                  />
-                </svg>
-              </span>
-            </a>
+            </svg>
+          </span>
+        </a>
 
-            <div
-              class="absolute shadow-md justify-between rounded-2xl hidden bg-white gap-4 w-44 cstm-drp h-fit group-hover:flex flex-col top-6"
-            >
-              @child
+        <div
+          class="absolute mega-menu shadow-md justify-between rounded-2xl hidden bg-white gap-4 w-44 cstm-drp h-fit group-hover:flex flex-col top-6"
+        >
+          <div class="right-sc"></div>
+          <div class="flex gap-4 justify-between w-full mg-container">
+            <div class="flex flex-col first-cnt">
+              <p class="mega-title">تور های داخلی</p>
+
+              <basis
+                core="tree"
+                datamembername="innertour.cat"
+                idcol="catid"
+                parentidcol="parentid"
+                nullvalue="213726"
+              >
+                <layout>
+                  <div class="megamenu-items">@child</div>
+                </layout>
+
+                <face level="end" filter="link is null">
+                  <a
+                    class="hover:text-primary-900 px-2"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title</a
+                  >
+                </face>
+                <face level="end">
+                  <a class="hover:text-primary-900 px-2" href="/@link"
+                    >@title</a
+                  >
+                </face>
+                <face level="1" filter="link is null">
+                  <div class="group/level2 relative">
+                    <a
+                      class="hover:text-primary-900 px-2"
+                      href="/tour-list.bc?catid=@catid"
+                      >@title
+                    </a>
+                    <ul
+                      class="shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col"
+                    >
+                      <div class="flex flex-col gap-4">@child</div>
+                    </ul>
+                  </div>
+                </face>
+                <face level="1">
+                  <div class="group/level2 relative">
+                    <a
+                      class="hover:text-primary-900 px-2"
+                      href="/tour-list.bc?catid=@catid"
+                      >@title
+                    </a>
+                    <ul
+                      class="shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col"
+                    >
+                      <div class="flex flex-col gap-4">@child</div>
+                    </ul>
+                  </div>
+                </face>
+                <face level="2" filter="link is null">
+                  <div class="group/level2 relative">
+                    <a
+                      class="hover:text-primary-900 px-2"
+                      href="/tour-list.bc?catid=@catid"
+                      >@title</a
+                    >
+                    <ul
+                      class="shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col"
+                    >
+                      <div class="flex flex-col gap-4">@child</div>
+                    </ul>
+                  </div>
+                </face>
+                <face level="2">
+                  <div class="group/level2 relative">
+                    <a
+                      class="hover:text-primary-900 px-2"
+                      href="/tour-list.bc?catid=@catid"
+                      >@title
+                    </a>
+                    <ul
+                      class="shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col"
+                    >
+                      <div class="flex flex-col gap-4">@child</div>
+                    </ul>
+                  </div>
+                </face>
+              </basis>
+            </div>
+            <div class="flex flex-col gap-4 left-sc">
+              <basis core="print" datamembername="innertour.cat">
+                <face filter="catid in(213726)">
+                  <img
+                    class="rounded-xl"
+                    height="294"
+                    width="233"
+                    src="@image"
+                    alt="تور-داخلی"
+                    loading="lazy"
+                  />
+                </face>
+              </basis>
+              <a
+                href="/تور-داخلی"
+                class="w-full flex justify-center items-center text-white rounded-xl"
+                >مشاهده تور های داخلی</a
+              >
             </div>
           </div>
-        </layout>
-        <face level="end" filter="link is null">
-          <a
-            class="hover:text-primary-900 px-2"
-            href="/tour-list.bc?catid=@catid"
-            >@title</a
-          >
-        </face>
-        <face level="end">
-          <a class="hover:text-primary-900 px-2" href="/@link">@title</a>
-        </face>
-        <face level="1" filter="link is null">
-          <div class="group/level2 relative">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/tour-list.bc?catid=@catid"
-              >@title
-            </a>
-            <ul
-              class="hidden shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col absolute"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="1">
-          <div class="group/level2 relative">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/tour-list.bc?catid=@catid"
-              >@title
-            </a>
-            <ul
-              class="hidden shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col absolute"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="2" filter="link is null">
-          <div class="group/level2 relative">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/tour-list.bc?catid=@catid"
-              >@title
-            </a>
-            <ul
-              class="hidden shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col absolute"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="2">
-          <div class="group/level2 relative">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/tour-list.bc?catid=@catid"
-              >@title
-            </a>
-            <ul
-              class="hidden shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col absolute"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-      </basis>
+        </div>
+      </div>
 
       <a
         href="/تور-نوروزی"
@@ -478,123 +537,154 @@
         خدمات اقامت
       </a>
 
-      <basis
-        core="tree"
-        datamembername="travelogue.cat"
-        idcol="catid"
-        parentidcol="parentid"
-        nullvalue="212320"
+      <!-- ---safarname--- -->
+      <div
+        class="text-zinc-800 relative hidden lg:flex gap-3 cursor-pointer items-center group transition-all duration-300 text-base font-normal"
       >
-        <layout>
-          <div
-            class="text-zinc-800 relative hidden lg:flex gap-3 cursor-pointer items-center group transition-all duration-300 text-base font-normal"
-          >
-            <a
-              href="/سفرنامه"
-              class="flex group items-center gap-4 text-sm font-normal hover:text-secondary-800 transition-1 text-primary-900"
+        <a
+          href="/سفرنامه"
+          class="flex group items-center gap-4 text-sm font-normal hover:text-secondary-800 transition-1 text-primary-900"
+        >
+          <img
+            loading="lazy"
+            class="w-[28px] h-[28px]"
+            width="56"
+            height="56"
+            src="[##cms.cms.cdn##]/images/travels.png"
+            alt="travels"
+            aria-label="travels"
+          />
+          سفرنامه
+          <span class="transition-1 group-hover:rotate-180">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <img
-                loading="lazy"
-                class="w-[28px] h-[28px]"
-                width="61"
-                height="60"
-                src="[##cms.cms.cdn##]/images/travels.png"
-                alt="travels"
-                aria-label="travels"
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
+                fill="#274571"
               />
-              سفر نامه
-              <span class="transition-1 group-hover:rotate-180">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
-                    fill="#274571"
-                  />
-                </svg>
-              </span>
-            </a>
+            </svg>
+          </span>
+        </a>
 
-            <div
-              class="absolute shadow-md justify-between rounded-2xl hidden bg-white gap-4 w-44 cstm-drp h-fit group-hover:flex flex-col top-6"
-            >
-              @child
+        <div
+          class="absolute mega-menu safarname-mgmn shadow-md justify-between rounded-2xl hidden bg-white gap-4 w-44 cstm-drp h-fit group-hover:flex flex-col top-6"
+        >
+          <div class="right-sc"></div>
+          <div class="flex gap-4 justify-between w-full mg-container">
+            <div class="flex flex-col first-cnt">
+              <p class="mega-title">سفرنامه</p>
+
+              <basis
+                core="tree"
+                datamembername="travelogue.cat"
+                idcol="catid"
+                parentidcol="parentid"
+                nullvalue="212320"
+              >
+                <layout>
+                  <div class="megamenu-items">@child</div>
+                </layout>
+
+                <face level="end" filter="link is null">
+                  <a
+                    class="hover:text-primary-900 px-2"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title</a
+                  >
+                </face>
+                <face level="end">
+                  <a class="hover:text-primary-900 px-2" href="/@link"
+                    >@title</a
+                  >
+                </face>
+                <face level="1" filter="link is null">
+                  <div class="group/level2 relative">
+                    <a
+                      class="hover:text-primary-900 px-2"
+                      href="/tour-list.bc?catid=@catid"
+                      >@title
+                    </a>
+                    <ul
+                      class="shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col"
+                    >
+                      <div class="flex flex-col gap-4">@child</div>
+                    </ul>
+                  </div>
+                </face>
+                <face level="1">
+                  <div class="group/level2 relative">
+                    <a
+                      class="hover:text-primary-900 px-2"
+                      href="/tour-list.bc?catid=@catid"
+                      >@title
+                    </a>
+                    <ul
+                      class="shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col"
+                    >
+                      <div class="flex flex-col gap-4">@child</div>
+                    </ul>
+                  </div>
+                </face>
+                <face level="2" filter="link is null">
+                  <div class="group/level2 relative">
+                    <a
+                      class="hover:text-primary-900 px-2"
+                      href="/tour-list.bc?catid=@catid"
+                      >@title</a
+                    >
+                    <ul
+                      class="shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col"
+                    >
+                      <div class="flex flex-col gap-4">@child</div>
+                    </ul>
+                  </div>
+                </face>
+                <face level="2">
+                  <div class="group/level2 relative">
+                    <a
+                      class="hover:text-primary-900 px-2"
+                      href="/tour-list.bc?catid=@catid"
+                      >@title
+                    </a>
+                    <ul
+                      class="shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col"
+                    >
+                      <div class="flex flex-col gap-4">@child</div>
+                    </ul>
+                  </div>
+                </face>
+              </basis>
+            </div>
+            <div class="flex flex-col gap-4 left-sc">
+              <basis core="print" datamembername="travelogue.cat">
+                <face filter="catid in(212320)">
+                  <img
+                    class="rounded-xl"
+                    height="294"
+                    width="233"
+                    src="@image"
+                    alt="سفرنامه"
+                    loading="lazy"
+                  />
+                </face>
+              </basis>
+              <a
+                href="/سفرنامه"
+                class="w-full flex justify-center items-center text-white rounded-xl"
+                >مشاهده سفرنامه</a
+              >
             </div>
           </div>
-        </layout>
-        <face level="end" filter="link is null">
-          <a
-            class="hover:text-primary-900 px-2"
-            href="/article-list.bc?catid=@catid"
-            >@title</a
-          >
-        </face>
-        <face level="end">
-          <a class="hover:text-primary-900 px-2" href="/@link">@title</a>
-        </face>
-        <face level="1" filter="link is null">
-          <div class="group/level2 relative">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/article-list.bc?catid=@catid"
-              >@title
-            </a>
-            <ul
-              class="hidden shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col absolute"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="1">
-          <div class="group/level2 relative">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/article-list.bc?catid=@catid"
-              >@title
-            </a>
-            <ul
-              class="hidden shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col absolute"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="2" filter="link is null">
-          <div class="group/level2 relative">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/article-list.bc?catid=@catid"
-              >@title
-            </a>
-            <ul
-              class="hidden shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col absolute"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="2">
-          <div class="group/level2 relative">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/article-list.bc?catid=@catid"
-              >@title
-            </a>
-            <ul
-              class="hidden shadow-md w-44 cstm-drp -left-44 top-0 bg-white rounded-2xl gap-4 h-fit group-hover/level2:flex flex-col absolute"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-      </basis>
+        </div>
+      </div>
+      <!-- ---safarname--- -->
 
       <a
         href="/درباره-تیناب-سفر"
@@ -617,7 +707,7 @@
 <nav
   class="translate-x-[7000px] z-[40] menu-mob fixed bg-background-1 top-0 left-0 w-full h-full flex flex-col gap-3"
 >
-  <div class="w-full h-[15%] p-5 flex justify-between items-center">
+  <div class="w-full h-[11%] px-5 flex justify-between items-center">
     <a href="/">
       <img
         loading="lazy"
@@ -648,415 +738,453 @@
   </div>
   <div class="w-full h-[85%] overflow-hidden">
     <div class="w-full flex flex-col p-5 gap-9 overflow-auto h-full">
-      <basis
-        core="tree"
-        datamembername="foreigntour.cat"
-        idcol="catid"
-        parentidcol="parentid"
-        nullvalue="213727"
-      >
-        <layout>
-          <div
-            class="flex w-full flex-col relative cursor-pointer text-zinc-900"
+      <div class="flex w-full flex-col relative cursor-pointer text-zinc-900">
+        <div
+          id="parent-nav"
+          class="w-full text-zinc-800 items-center py-1 flex gap-4"
+        >
+          <a
+            href="/تور-خارجی"
+            class="flex group items-center gap-4 text-sm font-normal hover:text-secondary-800 transition-1 text-primary-900"
           >
-            <div
-              id="parent-nav"
-              class="w-full text-zinc-800 items-center py-1 flex gap-4"
+            <img
+              loading="lazy"
+              class="w-[28px] h-[28px]"
+              width="56"
+              height="56"
+              src="[##cms.cms.cdn##]/images/tour-foreign.png"
+              alt="tour-foreign"
+              aria-label="foreigntour"
+            />
+            تور خارجی
+          </a>
+          <span class="transition-1 group-hover:rotate-180">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <a
-                href="/تور-خارجی"
-                class="flex group items-center gap-4 text-sm font-normal hover:text-secondary-800 transition-1 text-primary-900"
-              >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
+                fill="#274571"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          id="child2-nav"
+          class="w-full hidden mobile-megamenu h-fit flex-col flex gap-3"
+        >
+          <div class="flex flex-col gap-4 left-sc-mob">
+            <basis core="print" datamembername="foreigntour.cat">
+              <face filter="catid in(213727)">
                 <img
+                  class="rounded-xl w-full"
+                  height="294"
+                  width="233"
+                  src="@image"
                   loading="lazy"
-                  class="w-[28px] h-[28px]"
-                  width="56"
-                  height="56"
-                  src="[##cms.cms.cdn##]/images/tour-foreign.png"
-                  alt="tour-foreign"
-                  aria-label="foreigntour"
+                  alt="تور-خارجی"
                 />
-                تور خارجی
-              </a>
-              <span class="transition-1 group-hover:rotate-180">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
-                    fill="#274571"
-                  />
-                </svg>
-              </span>
-            </div>
-            <div
-              id="child2-nav"
-              class="w-full hidden h-fit flex-col flex gap-3"
-            >
-              @child
-            </div>
-          </div>
-        </layout>
-        <face level="end" filter="link is null">
-          <div class="w-full py-1 px-4">
+              </face>
+            </basis>
             <a
-              class="hover:text-primary-900 px-2 text-center"
-              href="/tour-list.bc?catid=@catid"
-              >@title</a
+              href="/تور-خارجی"
+              class="w-full flex justify-center items-center text-white rounded-xl"
+              >مشاهده تور های خارجی</a
             >
+            <p class="mb-mg-title">تور های خارجی</p>
           </div>
-        </face>
-        <face level="end">
-          <div class="w-full border-b px-2 py-4 border-[#DADADA] border-solid">
-            <a class="hover:text-primary-900" href="/@link">@title</a>
-          </div>
-        </face>
-        <face level="1" filter="link is null">
-          <div id="child1-nav" class="flex flex-col w-full gap-2">
-            <div class="w-full flex justify-between py-3">
-              <a
-                class="hover:text-primary-900 px-2 text-center"
-                href="/tour-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="transition-all duration-300 ease-in-out">
-                <svg
-                  width="17"
-                  height="11"
-                  viewBox="0 0 17 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
-                    fill="#27272A"
-                    class="group-hover:fill-primary-900"
-                  />
-                </svg>
-              </span>
-            </div>
-
-            <ul
-              class="hidden w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="1">
-          <div id="child1-nav" class="flex flex-col w-full gap-2">
-            <div class="w-full flex justify-between py-3">
-              <a
-                class="hover:text-primary-900 px-2 text-center"
-                href="/tour-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="transition-all duration-300 ease-in-out">
-                <svg
-                  width="17"
-                  height="11"
-                  viewBox="0 0 17 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
-                    fill="#27272A"
-                    class="group-hover:fill-primary-900"
-                  />
-                </svg>
-              </span>
-            </div>
-            <ul
-              class="hidden w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="2" filter="link is null">
-          <div id="child1-nav" class="flex flex-col w-full gap-2">
-            <div class="w-full flex justify-between py-3">
-              <a
-                class="hover:text-primary-900 px-2 text-center"
-                href="/tour-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="transition-all duration-300 ease-in-out">
-                <svg
-                  width="17"
-                  height="11"
-                  viewBox="0 0 17 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
-                    fill="#27272A"
-                    class="group-hover:fill-primary-900"
-                  />
-                </svg>
-              </span>
-            </div>
-
-            <ul
-              class="hidden w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="2">
-          <div id="child1-nav" class="flex flex-col w-full gap-2">
-            <div class="w-full flex justify-between py-3">
-              <a
-                class="hover:text-primary-900 px-2 text-center"
-                href="/tour-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="transition-all duration-300 ease-in-out">
-                <svg
-                  width="17"
-                  height="11"
-                  viewBox="0 0 17 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
-                    fill="#27272A"
-                    class="group-hover:fill-primary-900"
-                  />
-                </svg>
-              </span>
-            </div>
-            <ul
-              class="hidden whitespace-nowrap w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-      </basis>
-
-      <basis
-        core="tree"
-        datamembername="innertour.cat"
-        idcol="catid"
-        parentidcol="parentid"
-        nullvalue="213726"
-      >
-        <layout>
-          <div
-            class="flex w-full flex-col relative cursor-pointer text-zinc-900"
+          <basis
+            core="tree"
+            datamembername="foreigntour.cat"
+            idcol="catid"
+            parentidcol="parentid"
+            nullvalue="213727"
           >
-            <div
-              id="parent-nav"
-              class="w-full text-zinc-800 items-center py-1 flex gap-4"
+            <layout>
+              <div class="w-full h-fit gap-3 mobile-mgm-items">@child</div>
+            </layout>
+            <face level="end" filter="link is null">
+              <div class="w-full py-1 px-4">
+                <a
+                  class="hover:text-primary-900 px-2 text-center"
+                  href="/tour-list.bc?catid=@catid"
+                  >@title</a
+                >
+              </div>
+            </face>
+            <face level="end">
+              <div class="w-full px-2 py-4">
+                <a class="hover:text-primary-900" href="/@link">@title</a>
+              </div>
+            </face>
+            <face level="1" filter="link is null">
+              <div id="child1-nav" class="flex flex-col w-full gap-2">
+                <div class="w-full flex justify-between py-3">
+                  <a
+                    class="hover:text-primary-900 px-2 text-center"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title
+                  </a>
+                  <span class="transition-all duration-300 ease-in-out">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
+                        fill="#27272A"
+                        class="group-hover:fill-primary-900"
+                      />
+                    </svg>
+                  </span>
+                </div>
+
+                <ul
+                  class="w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
+                >
+                  @child
+                </ul>
+              </div>
+            </face>
+            <face level="1">
+              <div id="child1-nav" class="flex flex-col w-full gap-2">
+                <div class="w-full flex justify-between py-3">
+                  <a
+                    class="hover:text-primary-900 px-2 text-center"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title
+                  </a>
+                  <span class="transition-all duration-300 ease-in-out">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
+                        fill="#27272A"
+                        class="group-hover:fill-primary-900"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <ul
+                  class="w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
+                >
+                  @child
+                </ul>
+              </div>
+            </face>
+            <face level="2" filter="link is null">
+              <div id="child1-nav" class="flex flex-col w-full gap-2">
+                <div class="w-full flex justify-between py-3">
+                  <a
+                    class="hover:text-primary-900 px-2 text-center"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title
+                  </a>
+                  <span class="transition-all duration-300 ease-in-out">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
+                        fill="#27272A"
+                        class="group-hover:fill-primary-900"
+                      />
+                    </svg>
+                  </span>
+                </div>
+
+                <ul
+                  class="w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
+                >
+                  @child
+                </ul>
+              </div>
+            </face>
+            <face level="2">
+              <div id="child1-nav" class="flex flex-col w-full gap-2">
+                <div class="w-full flex justify-between py-3">
+                  <a
+                    class="hover:text-primary-900 px-2 text-center"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title
+                  </a>
+                  <span class="transition-all duration-300 ease-in-out">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
+                        fill="#27272A"
+                        class="group-hover:fill-primary-900"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <ul
+                  class="whitespace-nowrap w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
+                >
+                  @child
+                </ul>
+              </div>
+            </face>
+          </basis>
+        </div>
+      </div>
+
+      <!-- ___inner___ -->
+      <div class="flex w-full flex-col relative cursor-pointer text-zinc-900">
+        <div
+          id="parent-nav"
+          class="w-full text-zinc-800 items-center py-1 flex gap-4"
+        >
+          <a
+            href="/تور-داخلی"
+            class="flex group items-center gap-4 text-sm font-normal hover:text-secondary-800 transition-1 text-primary-900"
+          >
+            <img
+              loading="lazy"
+              class="w-[28px] h-[28px]"
+              width="56"
+              height="56"
+              src="[##cms.cms.cdn##]/images/inner-tour.png"
+              alt="inner-foreign"
+              aria-label="innertour"
+            />
+            تور داخلی
+          </a>
+          <span class="transition-1 group-hover:rotate-180">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <a
-                href="/تور-داخلی"
-                class="flex group items-center gap-4 text-sm font-normal hover:text-secondary-800 transition-1 text-primary-900"
-              >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
+                fill="#274571"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          id="child2-nav"
+          class="w-full hidden mobile-megamenu h-fit flex-col flex gap-3"
+        >
+          <div class="flex flex-col gap-4 left-sc-mob">
+            <basis core="print" datamembername="innertour.cat">
+              <face filter="catid in(213726)">
                 <img
+                  class="rounded-xl w-full"
+                  height="294"
+                  width="233"
+                  src="@image"
                   loading="lazy"
-                  class="w-[28px] h-[28px]"
-                  width="53"
-                  height="52"
-                  src="[##cms.cms.cdn##]/images/inner-tour.png"
-                  alt="inner-tour"
-                  aria-label="inner-tour"
+                  alt="تور-داخلی"
                 />
-                تور داخلی
-              </a>
-              <span class="transition-1 group-hover:rotate-180">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
-                    fill="#274571"
-                  />
-                </svg>
-              </span>
-            </div>
-            <div
-              id="child2-nav"
-              class="w-full hidden h-fit flex-col flex gap-3"
-            >
-              @child
-            </div>
-          </div>
-        </layout>
-        <face level="end" filter="link is null">
-          <div class="w-full py-1 px-4">
+              </face>
+            </basis>
             <a
-              class="hover:text-primary-900 px-2 text-center"
-              href="/tour-list.bc?catid=@catid"
-              >@title</a
+              href="/تور-داخلی"
+              class="w-full flex justify-center items-center text-white rounded-xl"
+              >مشاهده تور های داخلی</a
             >
+            <p class="mb-mg-title">تور های داخلی</p>
           </div>
-        </face>
-        <face level="end">
-          <div class="w-full border-b px-2 py-4 border-[#DADADA] border-solid">
-            <a class="hover:text-primary-900" href="/@link">@title</a>
-          </div>
-        </face>
-        <face level="1" filter="link is null">
-          <div id="child1-nav" class="flex flex-col w-full gap-2">
-            <div class="w-full flex justify-between py-3">
-              <a
-                class="hover:text-primary-900 px-2 text-center"
-                href="/tour-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="transition-all duration-300 ease-in-out">
-                <svg
-                  width="17"
-                  height="11"
-                  viewBox="0 0 17 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+          <basis
+            core="tree"
+            datamembername="innertour.cat"
+            idcol="catid"
+            parentidcol="parentid"
+            nullvalue="213726"
+          >
+            <layout>
+              <div class="w-full h-fit gap-3 mobile-mgm-items">@child</div>
+            </layout>
+            <face level="end" filter="link is null">
+              <div class="w-full py-1 px-4">
+                <a
+                  class="hover:text-primary-900 px-2 text-center"
+                  href="/tour-list.bc?catid=@catid"
+                  >@title</a
                 >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
-                    fill="#27272A"
-                    class="group-hover:fill-primary-900"
-                  />
-                </svg>
-              </span>
-            </div>
+              </div>
+            </face>
+            <face level="end">
+              <div class="w-full px-2 py-4">
+                <a class="hover:text-primary-900" href="/@link">@title</a>
+              </div>
+            </face>
+            <face level="1" filter="link is null">
+              <div id="child1-nav" class="flex flex-col w-full gap-2">
+                <div class="w-full flex justify-between py-3">
+                  <a
+                    class="hover:text-primary-900 px-2 text-center"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title
+                  </a>
+                  <span class="transition-all duration-300 ease-in-out">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
+                        fill="#27272A"
+                        class="group-hover:fill-primary-900"
+                      />
+                    </svg>
+                  </span>
+                </div>
 
-            <ul
-              class="hidden w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="1">
-          <div id="child1-nav" class="flex flex-col w-full gap-2">
-            <div class="w-full flex justify-between py-3">
-              <a
-                class="hover:text-primary-900 px-2 text-center"
-                href="/tour-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="transition-all duration-300 ease-in-out">
-                <svg
-                  width="17"
-                  height="11"
-                  viewBox="0 0 17 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                <ul
+                  class="w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
-                    fill="#27272A"
-                    class="group-hover:fill-primary-900"
-                  />
-                </svg>
-              </span>
-            </div>
-            <ul
-              class="hidden w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="2" filter="link is null">
-          <div id="child1-nav" class="flex flex-col w-full gap-2">
-            <div class="w-full flex justify-between py-3">
-              <a
-                class="hover:text-primary-900 px-2 text-center"
-                href="/tour-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="transition-all duration-300 ease-in-out">
-                <svg
-                  width="17"
-                  height="11"
-                  viewBox="0 0 17 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                  @child
+                </ul>
+              </div>
+            </face>
+            <face level="1">
+              <div id="child1-nav" class="flex flex-col w-full gap-2">
+                <div class="w-full flex justify-between py-3">
+                  <a
+                    class="hover:text-primary-900 px-2 text-center"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title
+                  </a>
+                  <span class="transition-all duration-300 ease-in-out">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
+                        fill="#27272A"
+                        class="group-hover:fill-primary-900"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <ul
+                  class="w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
-                    fill="#27272A"
-                    class="group-hover:fill-primary-900"
-                  />
-                </svg>
-              </span>
-            </div>
+                  @child
+                </ul>
+              </div>
+            </face>
+            <face level="2" filter="link is null">
+              <div id="child1-nav" class="flex flex-col w-full gap-2">
+                <div class="w-full flex justify-between py-3">
+                  <a
+                    class="hover:text-primary-900 px-2 text-center"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title
+                  </a>
+                  <span class="transition-all duration-300 ease-in-out">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
+                        fill="#27272A"
+                        class="group-hover:fill-primary-900"
+                      />
+                    </svg>
+                  </span>
+                </div>
 
-            <ul
-              class="hidden w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="2">
-          <div id="child1-nav" class="flex flex-col w-full gap-2">
-            <div class="w-full flex justify-between py-3">
-              <a
-                class="hover:text-primary-900 px-2 text-center"
-                href="/tour-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="transition-all duration-300 ease-in-out">
-                <svg
-                  width="17"
-                  height="11"
-                  viewBox="0 0 17 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                <ul
+                  class="w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
-                    fill="#27272A"
-                    class="group-hover:fill-primary-900"
-                  />
-                </svg>
-              </span>
-            </div>
-            <ul
-              class="hidden whitespace-nowrap w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-      </basis>
+                  @child
+                </ul>
+              </div>
+            </face>
+            <face level="2">
+              <div id="child1-nav" class="flex flex-col w-full gap-2">
+                <div class="w-full flex justify-between py-3">
+                  <a
+                    class="hover:text-primary-900 px-2 text-center"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title
+                  </a>
+                  <span class="transition-all duration-300 ease-in-out">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
+                        fill="#27272A"
+                        class="group-hover:fill-primary-900"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <ul
+                  class="whitespace-nowrap w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
+                >
+                  @child
+                </ul>
+              </div>
+            </face>
+          </basis>
+        </div>
+      </div>
+      <!-- ___inner___ -->
 
       <a
         href="/تور-نوروزی"
@@ -1122,210 +1250,228 @@
         خدمات اقامت
       </a>
 
-      <basis
-        core="tree"
-        datamembername="travelogue.cat"
-        idcol="catid"
-        parentidcol="parentid"
-        nullvalue="212320"
-      >
-        <layout>
-          <div
-            class="flex w-full flex-col relative cursor-pointer text-zinc-900"
+      <div class="flex w-full flex-col relative cursor-pointer text-zinc-900">
+        <div
+          id="parent-nav"
+          class="w-full text-zinc-800 items-center py-1 flex gap-4"
+        >
+          <a
+            href="/سفرنامه"
+            class="flex group items-center gap-4 text-sm font-normal hover:text-secondary-800 transition-1 text-primary-900"
           >
-            <div
-              id="parent-nav"
-              class="w-full text-zinc-800 items-center py-1 flex gap-4"
+            <img
+              loading="lazy"
+              class="w-[28px] h-[28px]"
+              width="56"
+              height="56"
+              src="[##cms.cms.cdn##]/images/travels.png"
+              alt="travels"
+              aria-label="travels"
+            />
+            سفرنامه
+          </a>
+          <span class="transition-1 group-hover:rotate-180">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <a
-                href="/سفرنامه"
-                class="flex group items-center gap-4 text-sm font-normal hover:text-secondary-800 transition-1 text-primary-900"
-              >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
+                fill="#274571"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          id="child2-nav"
+          class="w-full hidden mobile-megamenu h-fit flex-col flex gap-3"
+        >
+          <div class="flex flex-col gap-4 left-sc-mob">
+            <basis core="print" datamembername="travelogue.cat">
+              <face filter="catid in(212320)">
                 <img
+                  class="rounded-xl w-full"
+                  height="294"
+                  width="233"
+                  src="@image"
                   loading="lazy"
-                  class="w-[28px] h-[28px]"
-                  width="61"
-                  height="60"
-                  src="[##cms.cms.cdn##]/images/travels.png"
-                  alt="travels"
-                  aria-label="travel"
+                  alt="سفرنامه"
                 />
-                سفر نامه
-              </a>
-              <span class="transition-1 group-hover:rotate-180">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
-                    fill="#274571"
-                  />
-                </svg>
-              </span>
-            </div>
-            <div
-              id="child2-nav"
-              class="w-full hidden h-fit flex-col flex gap-3"
-            >
-              @child
-            </div>
-          </div>
-        </layout>
-        <face level="end" filter="link is null">
-          <div class="w-full py-1 px-4">
+              </face>
+            </basis>
             <a
-              class="hover:text-primary-900 px-2 text-center"
-              href="/article-list.bc?catid=@catid"
-              >@title</a
+              href="/سفرنامه"
+              class="w-full flex justify-center items-center text-white rounded-xl"
+              >مشاهده سفرنامه</a
             >
+            <p class="mb-mg-title">سفرنامه</p>
           </div>
-        </face>
-        <face level="end">
-          <div class="w-full border-b px-2 py-4 border-[#DADADA] border-solid">
-            <a class="hover:text-primary-900" href="/@link">@title</a>
-          </div>
-        </face>
-        <face level="1" filter="link is null">
-          <div id="child1-nav" class="flex flex-col w-full gap-2">
-            <div class="w-full flex justify-between py-3">
-              <a
-                class="hover:text-primary-900 px-2 text-center"
-                href="/article-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="transition-all duration-300 ease-in-out">
-                <svg
-                  width="17"
-                  height="11"
-                  viewBox="0 0 17 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+          <basis
+            core="tree"
+            datamembername="travelogue.cat"
+            idcol="catid"
+            parentidcol="parentid"
+            nullvalue="212320"
+          >
+            <layout>
+              <div class="w-full h-fit gap-3 mobile-mgm-items">@child</div>
+            </layout>
+            <face level="end" filter="link is null">
+              <div class="w-full py-1 px-4">
+                <a
+                  class="hover:text-primary-900 px-2 text-center"
+                  href="/tour-list.bc?catid=@catid"
+                  >@title</a
                 >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
-                    fill="#27272A"
-                    class="group-hover:fill-primary-900"
-                  />
-                </svg>
-              </span>
-            </div>
+              </div>
+            </face>
+            <face level="end">
+              <div class="w-full px-2 py-4">
+                <a class="hover:text-primary-900" href="/@link">@title</a>
+              </div>
+            </face>
+            <face level="1" filter="link is null">
+              <div id="child1-nav" class="flex flex-col w-full gap-2">
+                <div class="w-full flex justify-between py-3">
+                  <a
+                    class="hover:text-primary-900 px-2 text-center"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title
+                  </a>
+                  <span class="transition-all duration-300 ease-in-out">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
+                        fill="#27272A"
+                        class="group-hover:fill-primary-900"
+                      />
+                    </svg>
+                  </span>
+                </div>
 
-            <ul
-              class="hidden w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="1">
-          <div id="child1-nav" class="flex flex-col w-full gap-2">
-            <div class="w-full flex justify-between py-3">
-              <a
-                class="hover:text-primary-900 px-2 text-center"
-                href="/article-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="transition-all duration-300 ease-in-out">
-                <svg
-                  width="17"
-                  height="11"
-                  viewBox="0 0 17 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                <ul
+                  class="w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
-                    fill="#27272A"
-                    class="group-hover:fill-primary-900"
-                  />
-                </svg>
-              </span>
-            </div>
-            <ul
-              class="hidden w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="2" filter="link is null">
-          <div id="child1-nav" class="flex flex-col w-full gap-2">
-            <div class="w-full flex justify-between py-3">
-              <a
-                class="hover:text-primary-900 px-2 text-center"
-                href="/article-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="transition-all duration-300 ease-in-out">
-                <svg
-                  width="17"
-                  height="11"
-                  viewBox="0 0 17 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                  @child
+                </ul>
+              </div>
+            </face>
+            <face level="1">
+              <div id="child1-nav" class="flex flex-col w-full gap-2">
+                <div class="w-full flex justify-between py-3">
+                  <a
+                    class="hover:text-primary-900 px-2 text-center"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title
+                  </a>
+                  <span class="transition-all duration-300 ease-in-out">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
+                        fill="#27272A"
+                        class="group-hover:fill-primary-900"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <ul
+                  class="w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
-                    fill="#27272A"
-                    class="group-hover:fill-primary-900"
-                  />
-                </svg>
-              </span>
-            </div>
+                  @child
+                </ul>
+              </div>
+            </face>
+            <face level="2" filter="link is null">
+              <div id="child1-nav" class="flex flex-col w-full gap-2">
+                <div class="w-full flex justify-between py-3">
+                  <a
+                    class="hover:text-primary-900 px-2 text-center"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title
+                  </a>
+                  <span class="transition-all duration-300 ease-in-out">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
+                        fill="#27272A"
+                        class="group-hover:fill-primary-900"
+                      />
+                    </svg>
+                  </span>
+                </div>
 
-            <ul
-              class="hidden w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-        <face level="2">
-          <div id="child1-nav" class="flex flex-col w-full gap-2">
-            <div class="w-full flex justify-between py-3">
-              <a
-                class="hover:text-primary-900 px-2 text-center"
-                href="/article-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="transition-all duration-300 ease-in-out">
-                <svg
-                  width="17"
-                  height="11"
-                  viewBox="0 0 17 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                <ul
+                  class="w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
-                    fill="#27272A"
-                    class="group-hover:fill-primary-900"
-                  />
-                </svg>
-              </span>
-            </div>
-            <ul
-              class="hidden whitespace-nowrap w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
-            >
-              @child
-            </ul>
-          </div>
-        </face>
-      </basis>
+                  @child
+                </ul>
+              </div>
+            </face>
+            <face level="2">
+              <div id="child1-nav" class="flex flex-col w-full gap-2">
+                <div class="w-full flex justify-between py-3">
+                  <a
+                    class="hover:text-primary-900 px-2 text-center"
+                    href="/tour-list.bc?catid=@catid"
+                    >@title
+                  </a>
+                  <span class="transition-all duration-300 ease-in-out">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9139 1.7501L8.49994 10.1641L0.0859371 1.7501L1.49994 0.336101L8.49994 7.3361L15.4999 0.336101L16.9139 1.7501Z"
+                        fill="#27272A"
+                        class="group-hover:fill-primary-900"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <ul
+                  class="whitespace-nowrap w-full gap-4 h-fit flex-col transition-all duration-300 ease-in-out"
+                >
+                  @child
+                </ul>
+              </div>
+            </face>
+          </basis>
+        </div>
+      </div>
 
       <a
         href="/درباره-تیناب-سفر"

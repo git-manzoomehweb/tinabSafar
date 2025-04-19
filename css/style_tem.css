@@ -53,6 +53,10 @@ li#Tour {
 .social-icons li {
   display: inline-block;
 }
+.close-research,
+body {
+  display: flex !important;
+}
 @font-face {
   font-family: fontawesome;
   src: url("../fonts/reservation_fontawesome-webfont.eot")
@@ -246,7 +250,6 @@ html {
   font-family: DanaFaNum !important;
 }
 body {
-  display: flex !important;
   flex-direction: column;
   align-items: center !important;
 }
@@ -845,13 +848,10 @@ fieldset hr {
   margin-top: 2px;
   margin-right: 1px;
 }
-.active-tab {
-  background: var(--primary-900) !important;
-  color: white !important;
-}
+.active-tab,
 .tab-details .active-tab {
   background: var(--primary-900) !important;
-  color: white !important;
+  color: #fff !important;
 }
 #back-to-top {
   bottom: 100px !important;
@@ -963,7 +963,6 @@ fieldset hr {
 }
 .close-research {
   justify-content: center;
-  display: flex !important;
   align-items: center;
 }
 .details-row-middle_1 {
