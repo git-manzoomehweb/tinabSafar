@@ -1684,96 +1684,14 @@ video {
     width: 1280px;
   }
 }
-.Basis_Calendar
-  .month_day_list
-  table
-  td:not(.disable_day, .empty_day, .expire_day):hover,
+
 .loader::before {
   border-color: var(--primary);
 }
-.Basis_Calendar .selected_date {
-  background: linear-gradient(-90deg, #e0b276 0, #4b2d15 100%) !important;
-}
-.Basis_Calendar .selected_day,
-.calendar-apply-date:hover,
-.confirm-date-content button:hover {
-  background: var(--secondary-700);
-}
-.calendar-apply-date,
-.confirm-date-content button {
-  background: var(--primary);
-  color: #fff;
-}
-.day.days_available {
-  background: #f7ce93;
-}
-.Basis_Calendar .section_next_month,
-.Basis_Calendar .section_prev_month,
-.calendar-switch {
-  color: var(--primary);
-}
-.Basis_Calendar .current_day::after {
-  border-color: var(--secondary-700) transparent transparent;
-}
-.Basis_Calendar .current_day {
-  background: var(--primary) !important;
-  color: #fff !important;
-}
-@media only screen and (max-width: 1280px) {
-  .Basis_Calendar .current_month .section_next_month,
-  .Basis_Calendar .next_current_month .section_prev_month {
-    display: block !important;
-  }
-  .Basis_Calendar .current_month .month_detail {
-    border-radius: 4px 4px 0 0 !important;
-  }
-  .Basis_Calendar .current_month {
-    border-top-left-radius: 4px !important;
-    border-bottom-left-radius: 0 !important;
-    padding-left: 0 !important;
-  }
-  .Basis_Calendar .next_current_month {
-    z-index: 0 !important;
-    left: auto !important;
-    right: 0 !important;
-  }
-  .Basis_Calendar {
-    width: 91%;
-    margin: 0 auto;
-  }
-  .Basis_Calendar .month,
-  .Basis_Calendar .year,
-  .Basis_Calendar_Box {
-    left: 0;
-    margin: 0 auto;
-    width: 95% !important;
-  }
-  .Basis_Calendar_Box {
-    left: 0 !important;
-    right: 0 !important;
-    margin: 1.25em auto 0;
-  }
-  .Basis_Calendar .date_info_selected {
-    display: block !important;
-    width: 100% !important;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    color: #000 !important;
-  }
-  .Basis_Calendar_Box::before {
-    left: 3em !important;
-  }
-}
-.calendar-footer input {
-  padding: 8px !important;
-}
-.calendar-footer .calendar-apply-date {
-  height: 43.25px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
+ 
+ 
+
+
 .loader,
 .loader::after {
   left: -32px;

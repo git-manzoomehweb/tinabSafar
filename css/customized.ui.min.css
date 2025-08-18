@@ -1761,7 +1761,31 @@ html {
 .bg-primary {
   background-color: var(--primary);
 }
-@media not all and (min-width: 640px) {
+.calendar-apply-date {
+  background-color: var(--primary-500) !important;
+}
+@media not all and (min-width: 840px) {
+  .hidden-box {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+  }
+  #search-box .FlightClass.hidden-box .close-searchList {
+    margin-left: 15px !important;
+  }
+  #search-box .FlightClass.hidden-box {
+    border: none !important;
+  }
+  #r-hotel .passenger-item.room-passenger-item {
+    margin-top: 23px !important;
+  }
+  .close-passenger-box {
+    position: absolute;
+    left: 18px;
+    top: 9px;
+  }
   .multiroute-fields .add-routs {
     width: 100% !important;
   }
