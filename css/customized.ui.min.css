@@ -84,7 +84,7 @@ ul {
   --tw-numeric-spacing: ;
   --tw-numeric-fraction: ;
   --tw-ring-inset: ;
-  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-width: 0;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
   --tw-ring-offset-shadow: 0 0 #0000;
@@ -139,7 +139,7 @@ ul {
   --tw-numeric-spacing: ;
   --tw-numeric-fraction: ;
   --tw-ring-inset: ;
-  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-width: 0;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
   --tw-ring-offset-shadow: 0 0 #0000;
@@ -1610,6 +1610,9 @@ html {
   margin-top: 0 !important;
   padding-top: 2.2rem !important;
 }
+.week .days_available {
+  background-color: var(--secondary-200);
+}
 #search-box .Basis_Date_Box .border-type-1.h-full.rounded-type-1.px-2 {
   display: flex;
   flex-direction: column;
@@ -2404,11 +2407,12 @@ div.cstm-drp.top-6 {
 }
 .mega-menu {
   width: 1070px !important;
-  height: 431px !important;
+  height: 0 ;
   padding: 2rem 1.5rem;
   border-radius: 24px !important;
   overflow: hidden;
   z-index: 99999;
+  transition: all 0.666s ease-in-out;
 }
 .rounded-xl {
   border-radius: 0.75rem;
@@ -2422,16 +2426,13 @@ div.cstm-drp.top-6 {
   right: 0 !important;
 }
 .mega-menu .megamenu-items {
-  margin-right: 35px;
-  height: 350px;
+  padding-right: 35px;
+  height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.6rem;
   overflow-y: auto;
-}
-.mega-menu .megamenu-items::-webkit-scrollbar {
-  display: none !important;
 }
 .mega-menu ul.w-44.cstm-drp.-left-44 {
   box-shadow: none !important;
@@ -2501,7 +2502,12 @@ div.cstm-drp.top-6 {
   box-shadow: 0 4px 4px 0 #00000040 !important;
 }
 .mega-menu .first-cnt {
-  width: 70%;
+  width: 79%;
+  max-height: 350px;
+  overflow: hidden;
+}
+#flightHotelSearch .Wrapper-ExteraHoteldate .Basis_Date_Box {
+  width: 100% !important;
 }
 .left-sc-mob img,
 .mega-menu .left-sc img {
@@ -2551,6 +2557,23 @@ div.cstm-drp.top-6 {
 #child2-nav {
   animation: fadeIn 0.6s ease-in-out forwards;
 }
+.group:hover .mega-menu.group-hover\:flex {
+  animation: fadeIn2 0.666s ease-in-out forwards;
+  height: 431px !important;
+}
+.qs-ent-descr {
+  width: 100% !important;
+}
+@keyframes fadeIn2 {
+  from {
+    opacity: 0;
+    height: 0 !important;
+  }
+  to {
+    opacity: 1;
+    height: 431px !important;
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -2562,4 +2585,10 @@ div.cstm-drp.top-6 {
     transform: scale(1);
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   }
+}
+.mega-menu.special {
+  right: -300px !important;
+}
+.mega-menu.eroup {
+  right: -200px !important;
 }

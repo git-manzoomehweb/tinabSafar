@@ -1,393 +1,205 @@
-<basis
-  core="dbsource"
-  source="basiscore"
-  name="db"
-  lid="1"
-  mid="1"
-  usedforid="[##cms.query.id##]"
->
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]">
   <member request="json-ld" type="scalar" name="json" />
 </basis>
-<basis
-  core="dbsource"
-  source="basiscore"
-  name="db"
-  mid="1"
-  lid="1"
-  usedforid="[##cms.query.id##]"
->
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="[##cms.query.id##]">
   <member propertyid="7249" name="view" type="view" />
-  <member
-    name="related-tour"
-    size="262x262"
-    type="list"
-    blgid="221"
-    propertyid="10000504,8077,8181,8076,77191,77192,77193,77267,77330"
-    typeid="159"
-    link="tour.bc"
-    perpage="20"
-  />
-  <member
-    name="related-article"
-    type="list"
-    blgid="222"
-    link="article.bc"
-    propertyid="7244,7248,7249,7227,77320"
-    typeid="159"
-  />
+  <member name="related-tour" size="262x262" type="list" blgid="221"
+    propertyid="10000504,8077,8181,8076,77191,77192,77193,77267,77330" typeid="159" link="tour.bc" perpage="20" />
+  <member name="related-article" type="list" blgid="222" link="article.bc" propertyid="7244,7248,7249,7227,77320"
+    typeid="159" />
   <member name="data" type="view" request="rdfa" />
 </basis>
 
-<basis
-  core="dbsource"
-  source="media"
-  lid="1"
-  name="db"
-  usedforid="[##cms.query.id##]"
-  sourcemid="article"
->
+<basis core="dbsource" source="media" lid="1" name="db" usedforid="[##cms.query.id##]" sourcemid="article">
   <member type="list" name="gallery" format="4" order="ord"></member>
 </basis>
-<basis
-  core="dbsource"
-  source="userbehavior"
-  name="db"
-  usedforid="[##cms.query.id##]"
->
+<basis core="dbsource" source="userbehavior" name="db" usedforid="[##cms.query.id##]">
   <member name="comment" type="list" order="ord" request="listcomment" />
 </basis>
 
-<basis
-  core="dbsource"
-  source="basiscore"
-  lid="1"
-  mid="1"
-  name="db"
-  catid="[##cms.query.catid##]"
->
-  <member
-    name="navigation"
-    type="tree"
-    request="navcatid"
-    parentid="[##cms.query.catid##]"
-  />
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
+  <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
 </basis>
 
-<basis
-  core="dbsource"
-  source="basiscore"
-  lid="1"
-  mid="1"
-  name="db"
-  catid="213011"
->
-  <member
-    name="news-list"
-    type="list"
-    typeid="159"
-    propertyid="7244"
-    order="ord"
-  />
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="213011">
+  <member name="news-list" type="list" typeid="159" propertyid="7244" order="ord" />
 </basis>
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
-    />
-    <title>
-      [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری تیناب سفر پارسه)##]
-    </title>
-    <meta
-      name="description"
-      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  تیناب سفر پارسه)##]"
-    />
-    <basis
-      core="dbsource"
-      source="hosting"
-      name="tag"
-      urlid="[##cms.seo.urlid##]"
-    >
-      <member type="list" name="list" request="taglist" preview=""></member>
-    </basis>
-    <basis core="print" datamembername="tag.list">
-      <face filter="key = 'canonical'">
-        <link rel="canonical" href="@value" />
-      </face>
-      <face>
-        <meta property="@key" content="@value" />
-      </face>
-    </basis>
-    <basis core="call" file="pwa.inc" />
-    <basis core="call" file="style.inc" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
-    />
-  </head>
 
-  <body class="relative">
-    <basis core="call" file="header.inc" />
-    <main class="w-full flex mt-12 justify-center">
-      <div
-        class="w-full relative lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex items-start gap-4"
-      >
-        <span class="absolute top-[15%] -right-24 z-0">
-          <img
-            loading="lazy"
-            width="858"
-            height="848"
-            class="w-[285px] h-[95px]"
-            src="../../images/abs-lng.png"
-            alt=""
-          />
-        </span>
-        <span class="absolute top-[70%] -left-28 z-0">
-          <img
-            loading="lazy"
-            width="858"
-            height="848"
-            class="w-[285px] h-[95px]"
-            src="../../images/abs-lng.png"
-            alt=""
-          />
-        </span>
-        <div class="w-[70%] z-[2] flex flex-col gap-3">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover" />
+  <title>
+    [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری تیناب سفر پارسه)##]
+  </title>
+  <meta name="description" content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  تیناب سفر پارسه)##]" />
+  <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+    <member type="list" name="list" request="taglist" preview=""></member>
+  </basis>
+  <basis core="print" datamembername="tag.list">
+    <face filter="key = 'canonical'">
+      <link rel="canonical" href="@value" />
+    </face>
+    <face>
+      <meta property="@key" content="@value" />
+    </face>
+  </basis>
+  <basis core="call" file="pwa.inc" />
+  <basis core="call" file="style.inc" />
+  <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
+</head>
+
+<body class="relative">
+  <basis core="call" file="header.inc" />
+  <main class="w-full flex mt-12 justify-center">
+    <div class="w-full relative lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex items-start gap-4">
+      <span class="absolute top-[15%] -right-24 z-0">
+        <img loading="lazy" width="858" height="848" class="w-[285px] h-[95px]" src="../../images/abs-lng.png" alt="" />
+      </span>
+      <span class="absolute top-[70%] -left-28 z-0">
+        <img loading="lazy" width="858" height="848" class="w-[285px] h-[95px]" src="../../images/abs-lng.png" alt="" />
+      </span>
+      <div class="w-[70%] z-[2] flex flex-col gap-3">
+        <basis core="print" datamembername="db.view">
+          <face filter="TypeID=159">
+            <img loading="lazy" width="827" height="428" src="@text" alt="@Question" class="w-full rounded-xl h-428" />
+          </face>
+        </basis>
+
+        <div class="w-full hbgtrfvc flex flex-col gap-3 bg-white rounded-[10px] border border-zinc-300 p-5">
           <basis core="print" datamembername="db.view">
-            <face filter="TypeID=159">
-              <img
-                loading="lazy"
-                width="827"
-                height="428"
-                src="@text"
-                alt="@Question"
-                class="w-full rounded-xl h-428"
-              />
-            </face>
-          </basis>
-
-          <div
-            class="w-full hbgtrfvc flex flex-col gap-3 bg-white rounded-[10px] border border-zinc-300 p-5"
-          >
-            <basis core="print" datamembername="db.view">
-              <face filter="TypeID=150">
-                <h1
-                  class="text-zinc-900 font-bold w-full pb-3 border-b border-zinc-300"
-                >
-                  @text
-                </h1>
-              </face>
-            </basis>
-
-            <basis core="print" datamembername="db.view">
-              <face filter="TypeID<>150 and TypeID<>159 and TypeID<>128">
-                <h2 id="@valueID" class="text-zinc-900 font-bold">@text</h2>
-                <div class="text-sm text-zinc-900">@largetext</div>
-              </face>
-            </basis>
-          </div>
-        </div>
-        <div class="w-[30%] sticky top-6 z-[2] flex flex-col gap-3">
-          <basis core="print" datamembername="db.view">
-            <layout>
-              <div
-                class="w-full bg-white pb-3 rounded-lg border border-zinc-300 flex flex-col gap-[29px]"
-              >
-                <p class="text-primary-900 font-bold px-4 pt-3">تیتر ها</p>
-                @child
-              </div>
-            </layout>
-            <face
-              filter="TypeID<>150 and TypeID<>159 and TypeID<>128 and text <> ''"
-            >
-              <div
-                data-id="@valueID"
-                onclick="Set_Offset_Item(this)"
-                class="bfr-link font-bold cursor-pointer relative pr-9 hover:text-primary-600 transition-1"
-              >
+            <face filter="TypeID=150">
+              <h1 class="text-zinc-900 font-bold w-full pb-3 border-b border-zinc-300">
                 @text
-              </div>
-            </face>
-          </basis>
-          <basis core="print" datamembername="db.related-tour">
-            <layout>
-              <div
-                class="w-full bg-white p-3 rounded-lg border border-zinc-300 flex flex-col gap-6"
-              >
-                <p
-                  class="text-primary-900 font-bold w-full pb-3 pt-2 border-b border-zinc-300"
-                >
-                  تور های مرتبط
-                </p>
-                @child
-              </div>
-            </layout>
-            <face filter="link is null">
-              <a
-                href="/tour.bc?lid=1&id=@id"
-                class="flex gap-2 items-center w-full group"
-              >
-                <img
-                  loading="lazy"
-                  src="@00262X00262prp"
-                  alt="@title"
-                  width="262"
-                  height="262"
-                  class="w-[30%] group-hover:border-secondary-800 border-2 border-white transition-1 rounded-full"
-                />
-                <div
-                  class="w-[70%] group-hover:shadow-md flex flex-col p-3 gap-1 border border-zinc-300 rounded-lg h-[164px]"
-                >
-                  <p class="font-bold">@title</p>
-                  <div class="flex gap-2 items-center">
-                    <img
-                      loading="lazy"
-                      class="size-6"
-                      width="48"
-                      height="48"
-                      src="../../images/Calendar.png"
-                      alt="Calendar"
-                    />
-                    <p class="text-sm">@prp_8077</p>
-                  </div>
-
-                  <div class="flex gap-2 items-center">
-                    <img
-                      loading="lazy"
-                      class="size-5"
-                      width="40"
-                      height="40"
-                      src="../../images/Time-Circle.png"
-                      alt="Time"
-                    />
-                    <p class="text-sm">@prp_8076</p>
-                  </div>
-
-                  <div class="flex gap-2 items-center">
-                    <img
-                      loading="lazy"
-                      class="size-6"
-                      width="48"
-                      height="48"
-                      src="../../images/Coins.png"
-                      alt="coins"
-                    />
-                    <p class="text-sm">شروع قیمت از:</p>
-                  </div>
-                  <p class="font-bold">@prp_8181</p>
-                </div>
-              </a>
-            </face>
-            <face>
-              <a href="@link" class="flex gap-2 items-center w-full group">
-                <img
-                  loading="lazy"
-                  src="@00262X00262prp"
-                  alt="@title"
-                  width="262"
-                  height="262"
-                  class="w-[30%] group-hover:border-secondary-800 border-2 border-white transition-1 rounded-full"
-                />
-                <div
-                  class="w-[70%] group-hover:shadow-md flex flex-col p-3 gap-1 border border-zinc-300 rounded-lg h-[164px]"
-                >
-                  <p class="font-bold">@title</p>
-                  <div class="flex gap-2 items-center">
-                    <img
-                      loading="lazy"
-                      class="size-6"
-                      width="48"
-                      height="48"
-                      src="../../images/Calendar.png"
-                      alt="Calendar"
-                    />
-                    <p class="text-sm">@prp_8077</p>
-                  </div>
-
-                  <div class="flex gap-2 items-center">
-                    <img
-                      loading="lazy"
-                      class="size-5"
-                      width="40"
-                      height="40"
-                      src="../../images/Time-Circle.png"
-                      alt="Time"
-                    />
-                    <p class="text-sm">@prp_8076</p>
-                  </div>
-
-                  <div class="flex gap-2 items-center">
-                    <img
-                      loading="lazy"
-                      class="size-6"
-                      width="48"
-                      height="48"
-                      src="../../images/Coins.png"
-                      alt="coins"
-                    />
-                    <p class="text-sm">شروع قیمت از:</p>
-                  </div>
-                  <p class="font-bold">@prp_8181</p>
-                </div>
-              </a>
+              </h1>
             </face>
           </basis>
 
-          <basis core="print" datamembername="db.related-article">
-            <layout>
-              <div
-                class="w-full flex flex-col gap-4 p-4 rounded-lg bg-white border border-zinc-300"
-              >
-                <p
-                  class="text-primary-900 font-bold pb-3 border-b border-zinc-200"
-                >
-                  آخرین مطالب
-                </p>
-                @child
-              </div>
-            </layout>
-            <face filter="link is null">
-              <a href="/article.bc?lid=1&id=@id" class="flex wxyz gap-2 w-full">
-                <img
-                  loading="lazy"
-                  class="w-[27%] h-[96px] rounded-lg"
-                  width="96"
-                  height="96"
-                  src="@image"
-                  alt="@title"
-                />
-                <div
-                  class="w-[73%] flex flex-col p-3 h-[94px] gap-2 bg-secondary-50 border border-secondary-100 rounded-lg"
-                >
-                  <p class="line-clamp-1 text-zinc-900 font-medium">@title</p>
-                  <p class="line-clamp-2 text-zinc-900 !text-sm">@prp_7244</p>
-                </div>
-              </a>
-            </face>
-            <face>
-              <a href="@link" class="flex wxyz gap-2 w-full">
-                <img
-                  loading="lazy"
-                  class="w-[27%] h-[96px] rounded-lg"
-                  width="96"
-                  height="96"
-                  src="@image"
-                  alt="@title"
-                />
-                <div
-                  class="w-[73%] flex flex-col p-3 h-[94px] gap-2 bg-secondary-50 border border-secondary-100 rounded-lg"
-                >
-                  <p class="line-clamp-1 text-zinc-900 font-medium">@title</p>
-                  <p class="line-clamp-2 text-zinc-900 !text-sm">@prp_7244</p>
-                </div>
-              </a>
+          <basis core="print" datamembername="db.view">
+            <face filter="TypeID<>150 and TypeID<>159 and TypeID<>128">
+              <h2 id="@valueID" class="text-zinc-900 font-bold">@text</h2>
+              <div class="text-sm text-zinc-900">@largetext</div>
             </face>
           </basis>
         </div>
       </div>
-    </main>
-    <basis core="call" file="footer.inc" />
-  </body>
+      <div class="w-[30%] sticky top-6 z-[2] flex flex-col gap-3">
+        <basis core="print" datamembername="db.view">
+          <layout>
+            <div class="w-full bg-white pb-3 rounded-lg border border-zinc-300 flex flex-col gap-[29px]">
+              <p class="text-primary-900 font-bold px-4 pt-3">تیتر ها</p>
+              @child
+            </div>
+          </layout>
+          <face filter="TypeID<>150 and TypeID<>159 and TypeID<>128 and text <> ''">
+            <div data-id="@valueID" onclick="Set_Offset_Item(this)"
+              class="bfr-link font-bold cursor-pointer relative pr-9 hover:text-primary-600 transition-1">
+              @text
+            </div>
+          </face>
+        </basis>
+        <basis core="print" datamembername="db.related-tour">
+          <layout>
+            <div class="w-full bg-white p-3 rounded-lg border border-zinc-300 flex flex-col gap-6">
+              <p class="text-primary-900 font-bold w-full pb-3 pt-2 border-b border-zinc-300">
+                تور های مرتبط
+              </p>
+              @child
+            </div>
+          </layout>
+          <face filter="link is null">
+            <a href="/tour.bc?lid=1&id=@id" class="flex gap-2 items-center w-full group">
+              <img loading="lazy" src="@00262X00262prp" alt="@title" width="262" height="262"
+                class="w-[30%] group-hover:border-secondary-800 border-2 border-white transition-1 rounded-full" />
+              <div
+                class="w-[70%] group-hover:shadow-md flex flex-col p-3 gap-1 border border-zinc-300 rounded-lg h-[164px]">
+                <p class="font-bold">@title</p>
+                <div class="flex gap-2 items-center">
+                  <img loading="lazy" class="size-6" width="48" height="48" src="../../images/Calendar.png"
+                    alt="Calendar" />
+                  <p class="text-sm">@prp_8077</p>
+                </div>
+
+                <div class="flex gap-2 items-center">
+                  <img loading="lazy" class="size-5" width="40" height="40" src="../../images/Time-Circle.png"
+                    alt="Time" />
+                  <p class="text-sm">@prp_8076</p>
+                </div>
+
+                <div class="flex gap-2 items-center">
+                  <img loading="lazy" class="size-6" width="48" height="48" src="../../images/Coins.png" alt="coins" />
+                  <p class="text-sm">شروع قیمت از:</p>
+                </div>
+                <p class="font-bold">@prp_8181</p>
+              </div>
+            </a>
+          </face>
+          <face>
+            <a href="@link" class="flex gap-2 items-center w-full group">
+              <img loading="lazy" src="@00262X00262prp" alt="@title" width="262" height="262"
+                class="w-[30%] group-hover:border-secondary-800 border-2 border-white transition-1 rounded-full" />
+              <div
+                class="w-[70%] group-hover:shadow-md flex flex-col p-3 gap-1 border border-zinc-300 rounded-lg h-[164px]">
+                <p class="font-bold">@title</p>
+                <div class="flex gap-2 items-center">
+                  <img loading="lazy" class="size-6" width="48" height="48" src="../../images/Calendar.png"
+                    alt="Calendar" />
+                  <p class="text-sm">@prp_8077</p>
+                </div>
+
+                <div class="flex gap-2 items-center">
+                  <img loading="lazy" class="size-5" width="40" height="40" src="../../images/Time-Circle.png"
+                    alt="Time" />
+                  <p class="text-sm">@prp_8076</p>
+                </div>
+
+                <div class="flex gap-2 items-center">
+                  <img loading="lazy" class="size-6" width="48" height="48" src="../../images/Coins.png" alt="coins" />
+                  <p class="text-sm">شروع قیمت از:</p>
+                </div>
+                <p class="font-bold">@prp_8181</p>
+              </div>
+            </a>
+          </face>
+        </basis>
+
+        <basis core="print" datamembername="db.related-article">
+          <layout>
+            <div class="w-full flex flex-col gap-4 p-4 rounded-lg bg-white border border-zinc-300">
+              <p class="text-primary-900 font-bold pb-3 border-b border-zinc-200">
+                آخرین مطالب
+              </p>
+              @child
+            </div>
+          </layout>
+          <face filter="link is null">
+            <a href="/article.bc?lid=1&id=@id" class="flex wxyz gap-2 w-full">
+              <img loading="lazy" class="w-[27%] h-[96px] rounded-lg" width="96" height="96" src="@image"
+                alt="@title" />
+              <div
+                class="w-[73%] flex flex-col p-3 h-[94px] gap-2 bg-secondary-50 border border-secondary-100 rounded-lg">
+                <p class="line-clamp-1 text-zinc-900 font-medium">@title</p>
+                <p class="line-clamp-2 text-zinc-900 !text-sm">@prp_7244</p>
+              </div>
+            </a>
+          </face>
+          <face>
+            <a href="@link" class="flex wxyz gap-2 w-full">
+              <img loading="lazy" class="w-[27%] h-[96px] rounded-lg" width="96" height="96" src="@image"
+                alt="@title" />
+              <div
+                class="w-[73%] flex flex-col p-3 h-[94px] gap-2 bg-secondary-50 border border-secondary-100 rounded-lg">
+                <p class="line-clamp-1 text-zinc-900 font-medium">@title</p>
+                <p class="line-clamp-2 text-zinc-900 !text-sm">@prp_7244</p>
+              </div>
+            </a>
+          </face>
+        </basis>
+      </div>
+    </div>
+  </main>
+  <basis core="call" file="footer.inc" />
+</body>
+
 </html>
