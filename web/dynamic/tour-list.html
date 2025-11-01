@@ -1,308 +1,157 @@
-<basis
-  core="dbsource"
-  source="basiscore"
-  lid="1"
-  mid="18"
-  name="db"
-  usedforid="[##cms.query.catid##]"
->
+<basis core="dbsource" source="basiscore" lid="1" mid="18" name="db" usedforid="[##cms.query.catid##]">
   <member name="scalar" type="scalar" typeid="150" />
 </basis>
 
-<basis
-  core="dbsource"
-  source="basiscore"
-  lid="1"
-  mid="20"
-  name="db"
-  catid="[##cms.query.catid##]"
->
-  <member
-    name="navigation"
-    type="tree"
-    request="navcatid"
-    parentid="[##cms.query.catid##]"
-  />
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
+  <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
 </basis>
 
-<basis
-  core="dbsource"
-  source="basiscore"
-  lid="1"
-  mid="20"
-  name="db"
-  catid="[##cms.query.catid##]"
->
-  <member
-    name="tour-list"
-    type="list"
-    link="tour.bc"
-    propertyid="10000504,8076,8079,8181"
-    perpage="16"
-    pageno="[##cms.query.pagenum|(1)##]"
-    typeid=""
-    size="262x262"
-    order="[##cms.Host.tour-list-order|(ord)##]"
-  />
-  <member
-    name="paging"
-    type="list"
-    request="paging"
-    count="5"
-    parentname="tour-list"
-  />
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
+  <member name="tour-list" type="list" link="tour.bc" propertyid="10000504,8076,8079,8181" perpage="16"
+    pageno="[##cms.query.pagenum|(1)##]" typeid="" size="262x262" order="[##cms.Host.tour-list-order|(ord)##]" />
+  <member name="paging" type="list" request="paging" count="5" parentname="tour-list" />
 </basis>
 
-<basis
-  core="dbsource"
-  source="basiscore"
-  mid="20"
-  name="list"
-  lid="1"
-  schemaid="987"
-  term="[##cms.query.term##]"
->
+<basis core="dbsource" source="basiscore" mid="20" name="list" lid="1" schemaid="987" term="[##cms.query.term##]">
   <member name="airline" type="list" request="spelist" />
 </basis>
 
 <basis core="inlinesource" name="joining">
-  <member
-    name="list"
-    lefttblcol="db.tour-list.prp_10000504"
-    righttblcol="list.airline.name"
-    format="join"
-    jointype="leftjoin"
-  />
+  <member name="list" lefttblcol="db.tour-list.prp_10000504" righttblcol="list.airline.name" format="join"
+    jointype="leftjoin" />
+</basis>
+
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="[##cms.query.aid|(0)##]">
+  <member name="aid-text" type="view" />
 </basis>
 
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
-    />
-    <title>
-      [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری تیناب سفر پارسه)##]
-    </title>
-    <meta
-      name="description"
-      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  تیناب سفر پارسه)##]"
-    />
-    <basis
-      core="dbsource"
-      source="hosting"
-      name="tag"
-      urlid="[##cms.seo.urlid##]"
-    >
-      <member type="list" name="list" request="taglist" preview=""></member>
-    </basis>
-    <basis core="print" datamembername="tag.list">
-      <face filter="key = 'canonical'">
-        <link rel="canonical" href="@value" />
-      </face>
-      <face>
-        <meta property="@key" content="@value" />
-      </face>
-    </basis>
-    <basis core="call" file="pwa.inc" />
-    <basis core="call" file="style.inc" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
-    />
-  </head>
-  <body class="relative">
-    <basis core="call" file="header.inc" />
-    <main class="w-full flex flex-col">
-      <section
-        class="w-full t-list-bg h-[348px] flex flex-col gap-4 justify-center items-center bg-cover bg-no-repeat bg-center"
-      >
-        <basis core="print" datamembername="db.scalar">
-          <face>
-            <h1 class="text-white font-bold text-3xl">@column1</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover" />
+  <title>
+    [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری تیناب سفر پارسه)##]
+  </title>
+  <meta name="description" content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  تیناب سفر پارسه)##]" />
+  <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+    <member type="list" name="list" request="taglist" preview=""></member>
+  </basis>
+  <basis core="print" datamembername="tag.list">
+    <face filter="key = 'canonical'">
+      <link rel="canonical" href="@value" />
+    </face>
+    <face>
+      <meta property="@key" content="@value" />
+    </face>
+  </basis>
+  <basis core="call" file="pwa.inc" />
+  <basis core="call" file="style.inc" />
+  <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
+</head>
+
+<body class="relative">
+  <basis core="call" file="header.inc" />
+  <main class="w-full flex flex-col">
+    <section
+      class="w-full t-list-bg h-[348px] flex flex-col gap-4 justify-center items-center bg-cover bg-no-repeat bg-center">
+      <basis core="print" datamembername="db.scalar">
+        <face>
+          <h1 class="text-white font-bold text-3xl">@column1</h1>
+        </face>
+      </basis>
+
+      <ul class="flex gap-1 items-center">
+        <li class="text-white text-sm hover:!text-primary-900">
+          <a href="/">صفحه اصلی</a>
+        </li>
+        <li class="text-white text-sm">></li>
+
+        <basis core="print" datamembername="db.navigation">
+          <face filter="RowNumber=max(RowNumber) and parentcatid<>212228">
+            <li class="text-white text-sm" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span itemprop="name">@title</span>
+              <meta itemprop="position" content="@rownumber" />
+            </li>
+          </face>
+          <face filter="link is null and parentcatid<>212228">
+            <li class="text-white text-sm hover:!text-primary-900" itemprop="itemListElement" itemscope
+              itemtype="https://schema.org/ListItem">
+              <a class="text-white text-sm hover:!text-primary-900" itemprop="item"
+                href="/tour-list.bc?catid=@parentcatid" aria-label="@title"><span itemprop="name">@title</span>
+                <meta itemprop="position" content="@rownumber" />
+              </a>
+              <span class="text-white text-sm"> > </span>
+            </li>
+          </face>
+          <face filter="parentcatid<>212228">
+            <li class="text-white text-sm hover:!text-primary-900" itemprop="itemListElement" itemscope
+              itemtype="https://schema.org/ListItem">
+              <a class="text-white text-sm hover:!text-primary-900" itemprop="item" href="@link"
+                aria-label="@title"><span class="text-white" itemprop="name">@title</span>
+                <meta itemprop="position" content="@rownumber" />
+              </a>
+              <span class="text-white text-sm"> > </span>
+            </li>
           </face>
         </basis>
+      </ul>
+      <form action="/tour-search-content.bc" method="get" class="bg-white p-2 w-[528px] h-[77px] rounded-lg flex gap-2">
+        <input name="search-content-name" placeholder="جستجو" aria-label="search-tour" autocomplete="off" required
+          class="w-[363px] placeholder:text-primary-900 text-primary-900 px-4 truncate h-full bg-zinc-300 rounded-lg focus:outline-none focus:border-0"
+          type="text" />
+        <button
+          class="bg-primary-900 hovered group relative rounded-l-lg rounded-r overflow-hidden h-full w-[140px] text-white flex justify-center items-center"
+          type="submit">
+          <span class="pr-9 group-hover:font-bold">جستجو</span>
+          <span class="btn right-0 top-0 w-12 absolute h-full rounded-r"><svg width="20" height="20" viewBox="0 0 20 20"
+              fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M15.6207 15.6543C16.0072 15.2704 16.6268 15.2704 17.0134 15.6543L19.568 17.7164H19.6124C20.1292 18.2388 20.1292 19.0858 19.6124 19.6082C19.0955 20.1306 18.2576 20.1306 17.7407 19.6082L15.6207 17.1785L15.5403 17.0877C15.3904 16.898 15.3076 16.6615 15.3076 16.4164C15.3076 16.1304 15.4203 15.8562 15.6207 15.6543ZM8.57764 0C10.8526 0 13.0343 0.913436 14.6429 2.53936C16.2516 4.16529 17.1553 6.37052 17.1553 8.66993C17.1553 13.4582 13.3149 17.3399 8.57764 17.3399C3.84034 17.3399 0 13.4582 0 8.66993C0 3.88166 3.84034 0 8.57764 0Z"
+                fill="#005556" />
+            </svg>
+          </span>
+        </button>
+      </form>
+    </section>
 
-        <ul class="flex gap-1 items-center">
-          <li class="text-white text-sm hover:!text-primary-900">
-            <a href="/">صفحه اصلی</a>
-          </li>
-          <li class="text-white text-sm">></li>
-
-          <basis core="print" datamembername="db.navigation">
-            <face filter="RowNumber=max(RowNumber) and parentcatid<>212228">
-              <li
-                class="text-white text-sm"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="https://schema.org/ListItem"
-              >
-                <span itemprop="name">@title</span
-                ><meta itemprop="position" content="@rownumber" />
-              </li>
-            </face>
-            <face filter="link is null and parentcatid<>212228">
-              <li
-                class="text-white text-sm hover:!text-primary-900"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="https://schema.org/ListItem"
-              >
-                <a
-                  class="text-white text-sm hover:!text-primary-900"
-                  itemprop="item"
-                  href="/tour-list.bc?catid=@parentcatid"
-                  aria-label="@title"
-                  ><span itemprop="name">@title</span
-                  ><meta itemprop="position" content="@rownumber"
-                /></a>
-                <span class="text-white text-sm"> > </span>
-              </li>
-            </face>
-            <face filter="parentcatid<>212228">
-              <li
-                class="text-white text-sm hover:!text-primary-900"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="https://schema.org/ListItem"
-              >
-                <a
-                  class="text-white text-sm hover:!text-primary-900"
-                  itemprop="item"
-                  href="@link"
-                  aria-label="@title"
-                  ><span class="text-white" itemprop="name">@title</span
-                  ><meta itemprop="position" content="@rownumber"
-                /></a>
-                <span class="text-white text-sm"> > </span>
-              </li>
-            </face>
-          </basis>
-        </ul>
-        <form
-        action="/tour-search-content.bc"
-        method="get"
-          class="bg-white p-2 w-[528px] h-[77px] rounded-lg flex gap-2"
-        >
-          <input name="search-content-name"
-            placeholder="جستجو"
-            aria-label="search-tour"
-            autocomplete="off"
-            required
-            class="w-[363px] placeholder:text-primary-900 text-primary-900 px-4 truncate h-full bg-zinc-300 rounded-lg focus:outline-none focus:border-0"
-            type="text"
-          />
-          <button
-            class="bg-primary-900 hovered group relative rounded-l-lg rounded-r overflow-hidden h-full w-[140px] text-white flex justify-center items-center"
-            type="submit"
-          >
-            <span class="pr-9 group-hover:font-bold">جستجو</span>
-            <span class="btn right-0 top-0 w-12 absolute h-full rounded-r"
-              ><svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15.6207 15.6543C16.0072 15.2704 16.6268 15.2704 17.0134 15.6543L19.568 17.7164H19.6124C20.1292 18.2388 20.1292 19.0858 19.6124 19.6082C19.0955 20.1306 18.2576 20.1306 17.7407 19.6082L15.6207 17.1785L15.5403 17.0877C15.3904 16.898 15.3076 16.6615 15.3076 16.4164C15.3076 16.1304 15.4203 15.8562 15.6207 15.6543ZM8.57764 0C10.8526 0 13.0343 0.913436 14.6429 2.53936C16.2516 4.16529 17.1553 6.37052 17.1553 8.66993C17.1553 13.4582 13.3149 17.3399 8.57764 17.3399C3.84034 17.3399 0 13.4582 0 8.66993C0 3.88166 3.84034 0 8.57764 0Z"
-                  fill="#274571"
-                />
-              </svg>
-            </span>
-          </button>
-        </form>
-      </section>
-
-      <section class="w-full flex justify-center mt-20">
-        <div
-          class="px-5 flex flex-col gap-4 lg:!px-0 w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px]"
-        >
-          <div class="w-full relative min-h-screen flex gap-5">
-            <div class="w-[75%] justify-start set-alignment-with-tour flex flex-col relative gap-6">
+    <section class="w-full flex justify-center mt-20">
+      <div class="px-5 flex flex-col gap-4 lg:!px-0 w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px]">
+        <div class="w-full relative min-h-screen flex gap-5">
+          <div class="w-[75%]  flex flex-col relative gap-6">
+            <div class="w-full justify-start set-alignment-with-tour flex flex-col relative gap-6">
               <span class="absolute top-36 -right-24 z-0">
-                <img
-                  width="858"
-                  height="848"
-                  class="w-[285px] h-[195px]"
-                  src="../../images/abs-lng.png"
-                  alt=""
-                />
+                <img width="858" height="848" class="w-[285px] h-[195px]" src="../../images/abs-lng.png" alt="" />
               </span>
               <span class="absolute top-[80%] -right-24 z-0">
-                <img
-                  width="858"
-                  height="848"
-                  class="w-[285px] h-[195px]"
-                  src="../../images/abs-lng.png"
-                  alt=""
-                />
+                <img width="858" height="848" class="w-[285px] h-[195px]" src="../../images/abs-lng.png" alt="" />
               </span>
               <div
-                class="w-full h-[366px] mb-8 z-[2] items-center justify-center rounded-lg bg-primary-900 flex flex-col p-5 gap-5"
-              >
-                <div
-                  id="contact-form-resize"
-                  class="flex flex-col  gap-2 w-full"
-                >
-                  <basis
-                    core="schema"
-                    run="atclient"
+                class="w-full h-[366px] mb-8 z-[2] items-center justify-center rounded-lg bg-primary-900 flex flex-col p-5 gap-5">
+                <div id="contact-form-resize" class="flex flex-col  gap-2 w-full">
+                  <basis core="schema" run="atclient"
                     schemaurl="/schema/domainform/5ED86DAC-A44F-411F-9A2B-AF8F0A338231/35287F44-8628-4ECD-B550-08A1CD05C990/fa/مشاوره-ویزا"
-                    displaymode="new"
-                    button="[data-btn-uploadfooter]"
-                    resultsourceid="upload.datafooter"
-                    OnRendered="RenderFormFooter"
-                  ></basis>
-                  <basis
-                    core="api"
-                    if="{##cms.uploadFooter.run|(false)##}"
-                    run="atclient"
-                    url="/schema/domainform/5ED86DAC-A44F-411F-9A2B-AF8F0A338231/fa/editobject"
-                    method="post"
+                    displaymode="new" button="[data-btn-uploadfooter]" resultsourceid="upload.datafooter"
+                    OnRendered="RenderFormFooter"></basis>
+                  <basis core="api" if="{##cms.uploadFooter.run|(false)##}" run="atclient"
+                    url="/schema/domainform/5ED86DAC-A44F-411F-9A2B-AF8F0A338231/fa/editobject" method="post"
                     body="object_edit={##cms.uploadFooter.value##}&captcha={##cms.uploadFooter.captcha##}&captchaid={##cms.uploadFooter.captchaid##}"
-                    content-type="application/x-www-form-urlencoded"
-                    triggers="cms.uploadFooter"
-                    OnProcessed="OnProcessedEditObjectFooter"
-                  ></basis>
-                  <basis
-                    core="callback"
-                    run="atclient"
-                    method="uploadDocumentFooter"
-                    triggers="upload.datafooter"
-                  ></basis>
+                    content-type="application/x-www-form-urlencoded" triggers="cms.uploadFooter"
+                    OnProcessed="OnProcessedEditObjectFooter"></basis>
+                  <basis core="callback" run="atclient" method="uploadDocumentFooter" triggers="upload.datafooter">
+                  </basis>
                   <div class="captcha-button w-full">
-                    <div
-                      id="captchaContainer"
+                    <div id="captchaContainer"
                       class="captchaContainerclass w-full captcha-sefaresh ml-2.5 max-xl:ml-0 max-xl:mb-[20px]"
-                      data-bc-answer-container
-                      data-bc-schema-info-multi="0"
-                      data-bc-schema-info-word="58"
-                      data-bc-schema-info-part="1"
-                      data-bc-schema-info-part-0-type="text"
-                    >
-                      <basis
-                        core="dbsource"
-                        source="trust_login"
-                        name="captcha"
-                        run="atclient"
-                        triggers="captcha.refreshFooter"
-                      >
-                        <member
-                          name="code"
-                          type="scalar"
-                          request="captcha"
-                        ></member>
+                      data-bc-answer-container data-bc-schema-info-multi="0" data-bc-schema-info-word="58"
+                      data-bc-schema-info-part="1" data-bc-schema-info-part-0-type="text">
+                      <basis core="dbsource" source="trust_login" name="captcha" run="atclient"
+                        triggers="captcha.refreshFooter">
+                        <member name="code" type="scalar" request="captcha"></member>
                       </basis>
-                      <basis
-                        datamembername="captcha.code"
-                        core="print"
-                        run="atclient"
-                        OnRendered="captchaRenderedFooter"
-                      >
+                      <basis datamembername="captcha.code" core="print" run="atclient"
+                        OnRendered="captchaRenderedFooter">
                         <face>
                           <script type="text/template">
                                           <div class="flex w-full justify-between "><div class="flex lg:flex-row w-full items-center justify-between">
@@ -317,22 +166,15 @@
                           </script>
                         </face>
                       </basis>
-                      <button
-                        class="data-body-btn toungehsj btn w-[111px] h-12 rounded-[10px]"
-                        type="button"
-                        data-btn-uploadfooter
-                      >
+                      <button class="data-body-btn toungehsj btn w-[111px] h-12 rounded-[10px]" type="button"
+                        data-btn-uploadfooter>
                         ارسال
                       </button>
                     </div>
 
                     <div
-                      class="Loading_Form hidden data-body-btn w-[126px] h-12 px-4 py-2 rounded-2xl justify-center items-center gap-2.5 flex"
-                    >
-                      <div
-                        id="ballsWaveG"
-                        class="ext-zinc-50 text-base font-normal leading-normal"
-                      >
+                      class="Loading_Form hidden data-body-btn w-[126px] h-12 px-4 py-2 rounded-2xl justify-center items-center gap-2.5 flex">
+                      <div id="ballsWaveG" class="ext-zinc-50 text-base font-normal leading-normal">
                         <div id="ballsWaveG_1" class="ballsWaveG"></div>
                         <div id="ballsWaveG_2" class="ballsWaveG"></div>
                         <div id="ballsWaveG_3" class="ballsWaveG"></div>
@@ -349,30 +191,17 @@
               </div>
               <basis core="list" datamembername="joining.list">
                 <else-layout>
-                  <div
-                    class="w-full no-tour-found flex flex-col gap-5 justify-center items-center"
-                  >
-                    <svg
-                      width="44"
-                      height="58"
-                      viewBox="0 0 44 58"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
+                  <div class="w-full no-tour-found flex flex-col gap-5 justify-center items-center">
+                    <svg width="44" height="58" viewBox="0 0 44 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M34.1276 41.4538C34.1276 42.6626 33.1476 43.6438 31.9401 43.6438C30.7326 43.6438 29.7526 42.6626 29.7526 41.4538V26.3282C29.7526 25.1193 30.7326 24.1382 31.9401 24.1382C33.1476 24.1382 34.1276 25.1193 34.1276 26.3282V41.4538ZM28.6647 14.5313H15.3413V7.52333C15.3413 6.10713 16.4905 4.95373 17.9051 4.95373H26.098C27.5126 4.95373 28.6647 6.10713 28.6647 7.52333V14.5313ZM24.1934 41.4538C24.1934 42.6626 23.2134 43.6438 22.0059 43.6438C20.7984 43.6438 19.8184 42.6626 19.8184 41.4538V26.3282C19.8184 25.1193 20.7984 24.1382 22.0059 24.1382C23.2134 24.1382 24.1934 25.1193 24.1934 26.3282V41.4538ZM14.2767 41.4538C14.2767 42.6626 13.2967 43.6438 12.0892 43.6438C10.8817 43.6438 9.90168 42.6626 9.90168 41.4538V26.3282C9.90168 25.1193 10.8817 24.1382 12.0892 24.1382C13.2967 24.1382 14.2767 25.1193 14.2767 26.3282V41.4538ZM33.0396 14.6219V7.52333C33.0396 3.68937 29.9247 0.57373 26.098 0.57373H17.9051C14.0783 0.57373 10.9663 3.68937 10.9663 7.52333V14.6219C4.2696 15.092 0.12793 19.6559 0.12793 26.8538V40.5194C0.12793 47.3463 3.82626 51.8256 9.89585 52.687V55.3238C9.89585 56.5326 10.8758 57.5138 12.0833 57.5138C13.2908 57.5138 14.2708 56.5326 14.2708 55.3238V52.871H29.7467V55.3238C29.7467 56.5326 30.7267 57.5138 31.9342 57.5138C33.1417 57.5138 34.1217 56.5326 34.1217 55.3238V52.687C40.1826 51.8256 43.8722 47.3551 43.8722 40.5456V26.8538C43.8722 19.653 39.7334 15.0891 33.0396 14.6219Z"
-                        fill="#A1A1AA"
-                      />
+                        fill="#A1A1AA" />
                     </svg>
                     <p class="text-base text-zinc-400">
                       تور به مقصد فوق وجود ندارد
                     </p>
-                    <a
-                      class="w-fit hover:scale-105 p-3 bg-primary-900 rounded-lg h-16 flex justify-center items-center text-white text-sm"
-                      href="/"
-                    >
+                    <a class="w-fit hover:scale-105 p-3 bg-primary-900 rounded-lg h-16 flex justify-center items-center text-white text-sm"
+                      href="/">
                       بازگشت به صفحه اصلی
                     </a>
                   </div>
@@ -381,44 +210,23 @@
                   <div class="w-full flex flex-col gap-6">@child</div>
                 </layout>
                 <face filter="db.tour-list.link is null">
-                  <article
-                    class="w-full relative h-[262px] flex justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      width="262"
-                      height="262"
-                      src="@db.tour-list.00262X00262prp	"
-                      alt="@db.tour-list.title"
-                      class="rounded-full h-full w-[262px] absolute right-0 z-0"
-                    />
+                  <article class="w-full relative h-[262px] flex justify-center items-center">
+                    <img loading="lazy" width="262" height="262" src="@db.tour-list.00262X00262prp	"
+                      alt="@db.tour-list.title" class="rounded-full h-full w-[262px] absolute right-0 z-0" />
                     <div
-                      class="w-[81%] p-5 flex flex-col justify-between mr-[170px] h-[200px] bg-background-1 rounded-lg border border-zinc-400 z-[2]"
-                    >
+                      class="w-[81%] p-5 flex flex-col justify-between mr-[170px] h-[200px] bg-background-1 rounded-lg border border-zinc-400 z-[2]">
                       <p class="font-bold text-zinc-900">@db.tour-list.title</p>
                       <div class="flex items-center gap-12">
                         <div class="flex items-center gap-3">
-                          <img
-                      loading="lazy"
-                      class="size-5"
-                      width="40"
-                      height="40"
-                      src="../../images/Time-Circle.png"
-                      alt="Time"
-                    />
+                          <img loading="lazy" class="size-5" width="40" height="40" src="../../images/Time-Circle.png"
+                            alt="Time" />
                           <p class="text-sm text-zinc-900">
                             @db.tour-list.prp_8076
                           </p>
                         </div>
                         <div class="flex items-center gap-3">
-                         <img
-                      loading="lazy"
-                      class="size-6"
-                      width="48"
-                      height="48"
-                      src="../../images/Calendar.png"
-                      alt="Calendar"
-                    />
+                          <img loading="lazy" class="size-6" width="48" height="48" src="../../images/Calendar.png"
+                            alt="Calendar" />
                           <p class="text-sm text-zinc-900 pure-date hidden">
                             @db.tour-list.date
                           </p>
@@ -426,28 +234,14 @@
                         </div>
                       </div>
                       <div class="flex gap-3 items-center">
-                        <span class="airplane"
-                          ><svg
-                            width="24"
-                            height="26"
-                            viewBox="0 0 24 26"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
+                        <span class="airplane"><svg width="24" height="26" viewBox="0 0 24 26" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
                               d="M21.3555 16.6928L19.8975 15.2328C19.7915 15.1278 19.6475 15.0738 19.4945 15.0888L16.9995 15.3328L15.2305 13.2048L19.5785 8.7868C19.6735 8.6898 19.7255 8.5568 19.7215 8.42079C19.7175 8.28379 19.6575 8.15479 19.5555 8.06379C19.3975 7.92179 19.2465 7.77879 19.0965 7.63879C18.7155 7.28079 18.3555 6.94279 17.9395 6.64979C17.2525 6.15879 16.3925 6.0888 15.3865 6.4428C13.9235 6.9448 12.1995 7.5448 10.4955 8.18678C10.2695 8.26878 10.2355 8.2548 10.0785 8.0868L9.93854 7.9428C9.14854 7.13479 8.33354 6.29979 7.47454 5.52378C6.25754 4.43078 4.39154 3.81279 3.16854 5.04279C1.94954 6.26579 2.56454 8.1328 3.65454 9.3518C4.49054 10.2728 5.37854 11.1428 6.21854 11.9568C6.38454 12.1158 6.39454 12.1578 6.31454 12.3698C5.68154 14.0478 5.08154 15.7758 4.56854 17.2618C4.21254 18.2838 4.27954 19.1188 4.77454 19.8178C5.07354 20.2358 5.43054 20.6148 5.77454 20.9828C5.91254 21.1298 6.05154 21.2778 6.18954 21.4308C6.28154 21.5318 6.41054 21.5918 6.54654 21.5958C6.67954 21.5938 6.81554 21.5468 6.91254 21.4518C8.20954 20.1718 10.4945 17.9238 11.3345 17.0988L13.4735 18.8608L13.2145 21.3648C13.1995 21.5148 13.2525 21.6628 13.3585 21.7698L14.8155 23.2298C14.9095 23.3238 15.0375 23.3768 15.1695 23.3768C15.1895 23.3768 15.2095 23.3758 15.2305 23.3728C15.3825 23.3538 15.5185 23.2658 15.5985 23.1338L17.7215 19.6008L21.2585 17.4748C21.3915 17.3958 21.4795 17.2598 21.4975 17.1078C21.5165 16.9548 21.4635 16.8018 21.3555 16.6928Z"
-                              fill="#99C5DF"
-                            />
+                              fill="#7BD7DF" />
                           </svg>
                         </span>
-                        <img
-                          loading="lazy"
-                          width="60"
-                          src="@list.airline.pic"
-                          alt="@list.airline.name	"
-                        />
+                        <img loading="lazy" width="60" src="@list.airline.pic" alt="@list.airline.name" />
                         <p class="text-sm text-zinc-900">@list.airline.name</p>
                       </div>
                       <div class="flex w-full justify-between items-center">
@@ -455,68 +249,35 @@
                           @db.tour-list.prp_8181
                         </p>
                         <div class="flex items-center gap-2">
-                          <a
-                            class="hover:animate-bounce"
-                            href="tel:02188781900"
-                          >
-                            <img
-                              loading="lazy"
-                              width="96"
-                              height="96"
-                              class="w-12 h-12 rounded-full hovered"
-                              src="[##cms.cms.cdn##]/images/tel2.png"
-                              alt="phone"
-                            />
+                          <a class="hover:animate-bounce" href="tel:02188781900">
+                            <img loading="lazy" width="96" height="96" class="w-12 h-12 rounded-full hovered"
+                              src="[##cms.cms.cdn##]/images/tel2.png" alt="phone" />
                           </a>
-                          <a
-                            class="bg-primary-900 rounded-lg w-[129px] h-12 flex items-center justify-center text-white hover:bg-secondary-800 hovered"
-                            href="/tour.bc?id=@db.tour-list.id"
-                            >مشاهده جزئیات</a
-                          >
+                          <a class="bg-primary-900 rounded-lg w-[129px] h-12 flex items-center justify-center text-white hover:bg-secondary-800 hovered"
+                            href="/tour.bc?id=@db.tour-list.id">مشاهده جزئیات</a>
                         </div>
                       </div>
                     </div>
                   </article>
                 </face>
                 <face>
-                  <article
-                    class="w-full relative h-[262px] flex justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      width="262"
-                      height="262"
-                      src="@db.tour-list.00262X00262prp	"
-                      alt="@db.tour-list.title"
-                      class="rounded-full h-full w-[262px] absolute right-0 z-0"
-                    />
+                  <article class="w-full relative h-[262px] flex justify-center items-center">
+                    <img loading="lazy" width="262" height="262" src="@db.tour-list.00262X00262prp	"
+                      alt="@db.tour-list.title" class="rounded-full h-full w-[262px] absolute right-0 z-0" />
                     <div
-                      class="w-[81%] p-5 flex flex-col justify-between mr-[170px] h-[200px] bg-background-1 rounded-lg border border-zinc-400 z-[2]"
-                    >
+                      class="w-[81%] p-5 flex flex-col justify-between mr-[170px] h-[200px] bg-background-1 rounded-lg border border-zinc-400 z-[2]">
                       <p class="font-bold text-zinc-900">@db.tour-list.title</p>
                       <div class="flex items-center gap-12">
                         <div class="flex items-center gap-3">
-                          <img
-                      loading="lazy"
-                      class="size-5"
-                      width="40"
-                      height="40"
-                      src="../../images/Time-Circle.png"
-                      alt="Time"
-                    />
+                          <img loading="lazy" class="size-5" width="40" height="40" src="../../images/Time-Circle.png"
+                            alt="Time" />
                           <p class="text-sm text-zinc-900">
                             @db.tour-list.prp_8076
                           </p>
                         </div>
                         <div class="flex items-center gap-3">
-                          <img
-                      loading="lazy"
-                      class="size-6"
-                      width="48"
-                      height="48"
-                      src="../../images/Calendar.png"
-                      alt="Calendar"
-                    />
+                          <img loading="lazy" class="size-6" width="48" height="48" src="../../images/Calendar.png"
+                            alt="Calendar" />
                           <p class="text-sm text-zinc-900 pure-date hidden">
                             @db.tour-list.date
                           </p>
@@ -524,28 +285,14 @@
                         </div>
                       </div>
                       <div class="flex gap-3 items-center">
-                        <span class="airplane"
-                          ><svg
-                            width="24"
-                            height="26"
-                            viewBox="0 0 24 26"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
+                        <span class="airplane"><svg width="24" height="26" viewBox="0 0 24 26" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
                               d="M21.3555 16.6928L19.8975 15.2328C19.7915 15.1278 19.6475 15.0738 19.4945 15.0888L16.9995 15.3328L15.2305 13.2048L19.5785 8.7868C19.6735 8.6898 19.7255 8.5568 19.7215 8.42079C19.7175 8.28379 19.6575 8.15479 19.5555 8.06379C19.3975 7.92179 19.2465 7.77879 19.0965 7.63879C18.7155 7.28079 18.3555 6.94279 17.9395 6.64979C17.2525 6.15879 16.3925 6.0888 15.3865 6.4428C13.9235 6.9448 12.1995 7.5448 10.4955 8.18678C10.2695 8.26878 10.2355 8.2548 10.0785 8.0868L9.93854 7.9428C9.14854 7.13479 8.33354 6.29979 7.47454 5.52378C6.25754 4.43078 4.39154 3.81279 3.16854 5.04279C1.94954 6.26579 2.56454 8.1328 3.65454 9.3518C4.49054 10.2728 5.37854 11.1428 6.21854 11.9568C6.38454 12.1158 6.39454 12.1578 6.31454 12.3698C5.68154 14.0478 5.08154 15.7758 4.56854 17.2618C4.21254 18.2838 4.27954 19.1188 4.77454 19.8178C5.07354 20.2358 5.43054 20.6148 5.77454 20.9828C5.91254 21.1298 6.05154 21.2778 6.18954 21.4308C6.28154 21.5318 6.41054 21.5918 6.54654 21.5958C6.67954 21.5938 6.81554 21.5468 6.91254 21.4518C8.20954 20.1718 10.4945 17.9238 11.3345 17.0988L13.4735 18.8608L13.2145 21.3648C13.1995 21.5148 13.2525 21.6628 13.3585 21.7698L14.8155 23.2298C14.9095 23.3238 15.0375 23.3768 15.1695 23.3768C15.1895 23.3768 15.2095 23.3758 15.2305 23.3728C15.3825 23.3538 15.5185 23.2658 15.5985 23.1338L17.7215 19.6008L21.2585 17.4748C21.3915 17.3958 21.4795 17.2598 21.4975 17.1078C21.5165 16.9548 21.4635 16.8018 21.3555 16.6928Z"
-                              fill="#99C5DF"
-                            />
+                              fill="#7BD7DF" />
                           </svg>
                         </span>
-                        <img
-                          loading="lazy"
-                          width="60"
-                          src="@list.airline.pic"
-                          alt="@list.airline.name	"
-                        />
+                        <img loading="lazy" width="60" src="@list.airline.pic" alt="@list.airline.name" />
                         <p class="text-sm text-zinc-900">@list.airline.name</p>
                       </div>
                       <div class="flex w-full justify-between items-center">
@@ -553,24 +300,12 @@
                           @db.tour-list.prp_8181
                         </p>
                         <div class="flex items-center gap-2">
-                          <a
-                            class="hover:animate-bounce"
-                            href="tel:02188781900"
-                          >
-                            <img
-                              loading="lazy"
-                              width="96"
-                              height="96"
-                              class="w-12 h-12 rounded-full hovered"
-                              src="[##cms.cms.cdn##]/images/tel2.png"
-                              alt="phone"
-                            />
+                          <a class="hover:animate-bounce" href="tel:02188781900">
+                            <img loading="lazy" width="96" height="96" class="w-12 h-12 rounded-full hovered"
+                              src="[##cms.cms.cdn##]/images/tel2.png" alt="phone" />
                           </a>
-                          <a
-                            class="bg-primary-900 rounded-lg w-[129px] h-12 flex items-center justify-center text-white hover:bg-secondary-800 hovered"
-                            href="@db.tour-list.link"
-                            >مشاهده جزئیات</a
-                          >
+                          <a class="bg-primary-900 rounded-lg w-[129px] h-12 flex items-center justify-center text-white hover:bg-secondary-800 hovered"
+                            href="@db.tour-list.link">مشاهده جزئیات</a>
                         </div>
                       </div>
                     </div>
@@ -578,29 +313,16 @@
                 </face>
               </basis>
             </div>
-            <div class="w-[25%] self-start relative flex flex-col gap-7">
-              <span class="absolute top-[80%] -left-24 z-0">
-                <img
-                  width="858"
-                  height="848"
-                  class="w-[285px] h-[285px]"
-                  src="../../images/abs-lng.png"
-                  alt=""
-                />
-              </span>
-              <a
-                href="/"
-                class="w-full relative h-[570px] overflow-hidden rounded-lg"
-              >
-                <img
-                  loading="lazy"
-                  width=""
-                  height=""
-                  src="[##cms.cms.cdn##]/images/banner.jpg"
-                  alt=""
-                  class="w-full h-full z-[2] object-cover"
-                />
-                <!-- <div
+
+          </div>
+          <div class="w-[25%] self-start relative flex flex-col gap-7">
+            <span class="absolute top-[80%] -left-24 z-0">
+              <img width="858" height="848" class="w-[285px] h-[285px]" src="../../images/abs-lng.png" alt="" />
+            </span>
+            <a href="/" class="w-full relative h-[570px] overflow-hidden rounded-lg">
+              <img loading="lazy" width="" height="" src="[##cms.cms.cdn##]/images/banner.jpg" alt=""
+                class="w-full h-full z-[2] object-cover" />
+              <!-- <div
                   class="w-full h-full z-[5] flex flex-col items-center absolute top-0 left-0"
                 >
                   <p class="text-white font-bold text-xl pt-20">
@@ -615,114 +337,89 @@
                     >مشاهده</a
                   >
                 </div> -->
-              </a>
-              <basis core="print" datamembername="db.info">
-                <face filter="text in('اینستاگرام')">
-                  <a
-                    class="w-full z-[2]"
-                    href="@largetext"
-                    rel="noopener"
-                    aria-label="@text"
-                  >
-                    <img
-                      loading="lazy"
-                      width="477"
-                      height="977"
-                      src="[##cms.cms.cdn##]/images/iphone.png"
-                      alt="banner"
-                    />
-                  </a>
-                </face>
-              </basis>
-            </div>
+            </a>
+            <basis core="print" datamembername="db.info">
+              <face filter="text in('اینستاگرام')">
+                <a class="w-full z-[2]" href="@largetext" rel="noopener" aria-label="@text">
+                  <img loading="lazy" width="477" height="977" src="[##cms.cms.cdn##]/images/iphone.png" alt="banner" />
+                </a>
+              </face>
+            </basis>
           </div>
         </div>
-      </section>
+        <div class="w-full flex gap-4 justify-center items-center">
+          <basis core="print" datamembername="db.paging">
+            <face filter="(@sta='pre')">
+              <a class="w-12 h-12 bg-primary-900 transition-1 hover:bg-secondary-700 flex justify-center items-center rounded-2xl"
+                href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]" aria-label="angle-left">
+                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.83984 6C6.83984 6.12109 6.81484 6.24219 6.76484 6.36328C6.71484 6.48437 6.64984 6.57519 6.56984 6.63574L2.09984 11.1768C1.91984 11.3584 1.68984 11.4492 1.40984 11.4492C1.12984 11.4492 0.889844 11.3584 0.689844 11.1768C0.509844 10.9749 0.419844 10.7327 0.419844 10.4502C0.419844 10.1676 0.509844 9.93555 0.689844 9.75391L4.52984 5.87891L0.689844 2.00391C0.509844 1.80208 0.419844 1.5599 0.419844 1.27734C0.419844 0.994791 0.509844 0.762695 0.689844 0.581054C0.889844 0.379232 1.12984 0.27832 1.40984 0.27832C1.68984 0.27832 1.91984 0.379232 2.09984 0.581054L6.56984 5.0918C6.64984 5.29362 6.71484 5.46517 6.76484 5.60644C6.81484 5.74772 6.83984 5.87891 6.83984 6Z"
+                    fill="white" class="group-hover:fill-white" />
+                </svg>
+                </svg>
+              </a>
+            </face>
+          </basis>
+
+          <basis core="print" datamembername="db.paging">
+            <face filter="(@page=[##cms.query.pagenum|(1)##])">
+              <a class="w-12 h-12 bg-zinc-300 text-zinc-500 transition-1 hover:bg-secondary-200 flex justify-center items-center rounded-2xl"
+                href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]">
+                @page
+              </a>
+            </face>
+            <face filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no')">
+              <a href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                class="w-12 h-12 bg-zinc-300 text-zinc-500 transition-1 hover:bg-secondary-200 flex justify-center items-center rounded-2xl">
+                @page
+              </a>
+            </face>
+          </basis>
+
+          <basis core="print" datamembername="db.paging">
+            <face filter="(@sta='nex')">
+              <a href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]" aria-label="angle-right"
+                class="w-12 h-12 bg-primary-900 transition-1 hover:bg-secondary-700 flex justify-center items-center rounded-2xl">
+                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.83984 6C6.83984 6.12109 6.81484 6.24219 6.76484 6.36328C6.71484 6.48437 6.64984 6.57519 6.56984 6.63574L2.09984 11.1768C1.91984 11.3584 1.68984 11.4492 1.40984 11.4492C1.12984 11.4492 0.889844 11.3584 0.689844 11.1768C0.509844 10.9749 0.419844 10.7327 0.419844 10.4502C0.419844 10.1676 0.509844 9.93555 0.689844 9.75391L4.52984 5.87891L0.689844 2.00391C0.509844 1.80208 0.419844 1.5599 0.419844 1.27734C0.419844 0.994791 0.509844 0.762695 0.689844 0.581054C0.889844 0.379232 1.12984 0.27832 1.40984 0.27832C1.68984 0.27832 1.91984 0.379232 2.09984 0.581054L6.56984 5.0918C6.64984 5.29362 6.71484 5.46517 6.76484 5.60644C6.81484 5.74772 6.83984 5.87891 6.83984 6Z"
+                    fill="white" class="group-hover:fill-white" />
+                </svg>
+              </a>
+            </face>
+          </basis>
+        </div>
 
 
 
+        <div class="w-full flex flex-col gap-3 aid-container">
+          <basis core="print" datamembername="db.aid-text">
+            <face filter="TypeID=150">
+              <p class="font-bold text-2xl"> @text</p>
+
+            </face>
+          </basis>
+
+          <basis core="print" datamembername="db.aid-text">
+            <face filter="TypeID=129">
+              <div class="text-sm text-zinc-900 text-justify">@largetext</div>
+            </face>
+          </basis>
 
 
+          <basis core="print" datamembername="db.aid-text">
+            <face filter="TypeID=250">
+              <p class=" w-full flex items-center  relative font-bold text-2xl text-zinc-900 ">
+                @text
+              </p>
+              <div class="text-sm text-zinc-900 text-justify">@largetext</div>
 
-
-
-
-
-
-
-
-      <div class="w-full flex gap-4 justify-center items-center">
-        <basis core="print" datamembername="db.paging">
-          <face filter="(@sta='pre')">
-            <a
-            class="w-12 h-12 bg-primary-900 transition-1 hover:bg-secondary-700 flex justify-center items-center rounded-2xl"
-            href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
-              aria-label="angle-left"
-            >
-              <svg
-            width="7"
-            height="12"
-            viewBox="0 0 7 12"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6.83984 6C6.83984 6.12109 6.81484 6.24219 6.76484 6.36328C6.71484 6.48437 6.64984 6.57519 6.56984 6.63574L2.09984 11.1768C1.91984 11.3584 1.68984 11.4492 1.40984 11.4492C1.12984 11.4492 0.889844 11.3584 0.689844 11.1768C0.509844 10.9749 0.419844 10.7327 0.419844 10.4502C0.419844 10.1676 0.509844 9.93555 0.689844 9.75391L4.52984 5.87891L0.689844 2.00391C0.509844 1.80208 0.419844 1.5599 0.419844 1.27734C0.419844 0.994791 0.509844 0.762695 0.689844 0.581054C0.889844 0.379232 1.12984 0.27832 1.40984 0.27832C1.68984 0.27832 1.91984 0.379232 2.09984 0.581054L6.56984 5.0918C6.64984 5.29362 6.71484 5.46517 6.76484 5.60644C6.81484 5.74772 6.83984 5.87891 6.83984 6Z"
-              fill="white"
-              class="group-hover:fill-white"
-            />
-          </svg>
-              </svg>
-            </a>
-          </face>
-        </basis>
-
-        <basis core="print" datamembername="db.paging">
-          <face filter="(@page=[##cms.query.pagenum|(1)##])">
-            <a
-            class="w-12 h-12 bg-zinc-300 text-zinc-500 transition-1 hover:bg-secondary-200 flex justify-center items-center rounded-2xl"
-            href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
-            >
-              @page
-            </a>
-          </face>
-          <face
-            filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no')"
-          >
-            <a
-              href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
-              class="w-12 h-12 bg-zinc-300 text-zinc-500 transition-1 hover:bg-secondary-200 flex justify-center items-center rounded-2xl"
-
-            >
-              @page
-            </a>
-          </face>
-        </basis>
-
-        <basis core="print" datamembername="db.paging">
-          <face filter="(@sta='nex')">
-            <a
-              href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
-              aria-label="angle-right"
-              class="w-12 h-12 bg-primary-900 transition-1 hover:bg-secondary-700 flex justify-center items-center rounded-2xl"
-              >
-             <svg
-            width="7"
-            height="12"
-            viewBox="0 0 7 12"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6.83984 6C6.83984 6.12109 6.81484 6.24219 6.76484 6.36328C6.71484 6.48437 6.64984 6.57519 6.56984 6.63574L2.09984 11.1768C1.91984 11.3584 1.68984 11.4492 1.40984 11.4492C1.12984 11.4492 0.889844 11.3584 0.689844 11.1768C0.509844 10.9749 0.419844 10.7327 0.419844 10.4502C0.419844 10.1676 0.509844 9.93555 0.689844 9.75391L4.52984 5.87891L0.689844 2.00391C0.509844 1.80208 0.419844 1.5599 0.419844 1.27734C0.419844 0.994791 0.509844 0.762695 0.689844 0.581054C0.889844 0.379232 1.12984 0.27832 1.40984 0.27832C1.68984 0.27832 1.91984 0.379232 2.09984 0.581054L6.56984 5.0918C6.64984 5.29362 6.71484 5.46517 6.76484 5.60644C6.81484 5.74772 6.83984 5.87891 6.83984 6Z"
-              fill="white"
-              class="group-hover:fill-white"
-            />
-          </svg>
-            </a>
-          </face>
-        </basis>
+            </face>
+          </basis>
+        </div>
       </div>
+    </section>
 
 
 
@@ -733,9 +430,24 @@
 
 
 
-      
-    </main>
-    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
-    <basis core="call" file="footer.inc" />
-  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+  <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+  <basis core="call" file="footer.inc" />
+</body>
+
 </html>
